@@ -20,77 +20,61 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     final textStyle =
         Theme.of(context).textTheme.bodyLarge ?? const TextStyle();
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 40, 0, 10),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                InkWell(
-                    onTap: _changecolor,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Login',
-                          style: textStyle.copyWith(
-                              color: _isTapped
-                                  ? const Color.fromARGB(225, 1, 130, 65)
-                                  : Colors.black87),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            color: _isTapped
-                                ? const Color.fromARGB(225, 1, 130, 65)
-                                : Colors.black87,
-                            height: 30,
-                            thickness: 3,
-                            indent: 50,
-                            endIndent: 0,
-                          ),
-                        ),
-                      ],
-                    )),
-                Text('Register',
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 30, 0, 18),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                  onTap: _changecolor,
+                  child: Text(
+                    'Login',
                     style: textStyle.copyWith(
                         color: _isTapped
                             ? const Color.fromARGB(225, 1, 130, 65)
-                            : Colors.black87))
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Expanded(
-                //   child: Divider(
-                //     color: _isTapped
-                //         ? const Color.fromARGB(225, 1, 130, 65)
-                //         : Colors.black87,
-                //     height: 30,
-                //     thickness: 3,
-                //     indent: 50,
-                //     endIndent: 0,
-                //   ),
-                // ),
-                Expanded(
-                  child: Divider(
-                    color: _isTapped
-                        ? const Color.fromARGB(225, 1, 130, 65)
-                        : Colors.black87,
-                    height: 30,
-                    thickness: 3,
-                    indent: 0,
-                    endIndent: 40,
-                  ),
+                            : Colors.black87),
+                  )),
+              InkWell(
+                onTap: _changecolor,
+                child: Text('Register',
+                    style: textStyle.copyWith(
+                        color: _isTapped
+                            ? Colors.black87
+                            : const Color.fromARGB(225, 1, 130, 65))),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Divider(
+                  color: _isTapped
+                      ? const Color.fromARGB(225, 1, 130, 65)
+                      : Colors.black87,
+                  height: 30,
+                  thickness: 3,
+                  indent: 15,
+                  endIndent: 0,
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+              Expanded(
+                child: Divider(
+                  color: _isTapped
+                      ? const Color.fromARGB(221, 159, 159, 159)
+                      : const Color.fromARGB(225, 1, 130, 65),
+                  height: 30,
+                  thickness: 3,
+                  indent: 0,
+                  endIndent: 10,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

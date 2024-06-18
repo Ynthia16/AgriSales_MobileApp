@@ -1,5 +1,6 @@
 import 'package:agrisale/Themes/themes_constant.dart';
 import 'package:agrisale/screens/login.dart';
+import 'package:agrisale/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: lightTheme, home: const LoginScreen());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        home: const RegisterScreen()
+        //  home: const LoginScreen()
+
+        );
   }
 }
