@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   useMaterial3: true,
+  primaryColor: Colors.green,
   textTheme: const TextTheme(
     displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
     headlineMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),

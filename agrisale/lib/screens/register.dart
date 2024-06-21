@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Color.fromARGB(255, 220, 220, 220), fontSize: 18),
                 ),
               ),
-              const MyDropDown(),
+              // const MyDropDown(),
               const SizedBox(height: 20),
               const MyButton(buttonWord: 'Register'),
               const SizedBox(height: 20),

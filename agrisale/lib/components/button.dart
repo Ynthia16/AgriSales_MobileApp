@@ -15,10 +15,10 @@ class MyButton extends StatelessWidget {
         child: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                disabledBackgroundColor: Colors.blue,
+                backgroundColor: Theme.of(context).primaryColor,
+                // disabledBackgroundColor: Colors.blue,
                 foregroundColor: Colors.white,
-                disabledForegroundColor: Colors.amber,
+                // disabledForegroundColor: Colors.amber,
                 elevation: 5.5,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12))),
