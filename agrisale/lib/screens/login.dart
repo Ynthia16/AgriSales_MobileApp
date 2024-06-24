@@ -1,4 +1,5 @@
 import 'package:agrisale/components/app_bar.dart';
+import 'package:agrisale/components/bottom_navigation.dart';
 import 'package:agrisale/components/button.dart';
 import 'package:agrisale/components/input_text.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(height: 14),
-              const MyButton(buttonWord: 'Login', screenName: LoginScreen(),),
+              const MyButton(
+                buttonWord: 'Login',
+                screenName: MainScreen(),
+              ),
               const Padding(
                 padding: EdgeInsets.fromLTRB(8, 14, 8, 10),
                 child:

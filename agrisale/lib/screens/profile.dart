@@ -35,7 +35,7 @@ class MyProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            const Text('Cynthia Rutaganda',
+            const Text('Cynthia Nekesa',
                 style: TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w700)),
             const SizedBox(height: 10),

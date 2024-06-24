@@ -19,6 +19,7 @@ class _MyTabBarState extends State<MyTabBar> {
             toolbarHeight: 130,
             backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
             bottom: const TabBar(
+              
               indicatorColor: Colors.green,
               labelColor: Colors.white,
               tabs: [

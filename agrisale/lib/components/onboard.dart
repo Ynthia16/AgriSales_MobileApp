@@ -9,7 +9,6 @@ class OnBoardCard extends StatefulWidget {
 
   final String imageName, title, description;
 
-  
   @override
   State<OnBoardCard> createState() => _OnBoardCardState();
 }
@@ -28,8 +27,11 @@ class _OnBoardCardState extends State<OnBoardCard> {
                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           const SizedBox(height: 20),
           Text(widget.description,
-              style:
-                  const TextStyle(fontSize: 20, fontWeight: FontWeight.normal))
+              textAlign: TextAlign.justify,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+              ))
         ],
       ),
     );
@@ -43,18 +45,21 @@ class OnBoard {
       required this.title,
       required this.description});
 }
+
 final List<OnBoardCard> data = [
   const OnBoardCard(
-      imageName: 'assets/images/imageFlutter.PNG',
-      title: 'food',
+      imageName: 'assets/images/onBoardPic1.png',
+      title: 'Monitoring soil and plant',
       description:
-          'so here is the love of my life ad that lover is jesus above all creations.'),
+          'we aim to use optical (VIR) sensing to observe the fields and make timely crop management decisions..'),
   const OnBoardCard(
-      imageName: 'assets/images/imageFlutter.PNG',
-      title: 'water',
-      description: 'love'),
+      imageName: 'assets/images/onBoardPic2.png',
+      title: 'Early detection of plant and soil diseases ',
+      description:
+          'our project can detect plant and soil diseases using an existing camera sensor that tracks the plants in real-time day by day.'),
   const OnBoardCard(
-      imageName: 'assets/images/imageFlutter.PNG',
-      title: 'milk',
-      description: 'Holy'),
+      imageName: 'assets/images/onBoardPic3.png',
+      title: 'Improve agriculture precision',
+      description:
+          'we will use satellite imagery, image processing, deep learning, computer vision, and remote sensing to detect changes in the field and crops and solve the problems whenever they pop.')
 ];

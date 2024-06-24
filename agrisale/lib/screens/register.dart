@@ -58,9 +58,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               // const MyDropDown(),
+              const SizedBox(height: 25),
+              const DropdownMenuExample(),
 
               // const SizedBox(height: 20),
-              const MyButton(buttonWord: 'Register', screenName: RegisterScreen(),),
+              const MyButton(
+                buttonWord: 'Register',
+                screenName: RegisterScreen(),
+              ),
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,

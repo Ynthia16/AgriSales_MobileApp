@@ -35,7 +35,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  dropdown_textfield: ^1.1.0
   flutter_riverpod: ^2.5.1
   
 
@@ -65,7 +64,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/imageFlutter.PNG
+    - assets/images/onBoardPic1.png
+    - assets/images/onBoardPic2.png
+    - assets/images/onBoardPic3.png
+    
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
