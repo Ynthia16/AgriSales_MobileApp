@@ -1,5 +1,6 @@
 import 'package:agrisale/components/onboard.dart';
 import 'package:agrisale/screens/login.dart';
+import 'package:agrisale/components/tab_bar.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
@@ -27,9 +28,9 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
     super.dispose();
   }
 
-  void _navigateToLoginScreen() {
+  void _navigateToMyTabBar() {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const LoginScreen()),
+      MaterialPageRoute(builder: (context) => const MyTabBar()),
     );
   }
 
@@ -72,7 +73,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_pageIndex == data.length - 1) {
-                          _navigateToLoginScreen();
+                          _navigateToMyTabBar();
                         } else {
                           _pageController.nextPage(
                             duration: const Duration(milliseconds: 300),

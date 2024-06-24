@@ -1,3 +1,5 @@
+import 'package:agrisale/screens/login.dart';
+import 'package:agrisale/screens/register.dart';
 import 'package:flutter/material.dart';
 
 class MyTabBar extends StatefulWidget {
@@ -10,23 +12,27 @@ class MyTabBar extends StatefulWidget {
 class _MyTabBarState extends State<MyTabBar> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          toolbarHeight: 150,
-          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-          bottom: const TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],
-          )),
-      body: const TabBarView(
-        children: [
-          Icon(Icons.directions_car),
-          Icon(Icons.directions_transit),
-          Icon(Icons.directions_bike),
-        ],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+            toolbarHeight: 130,
+            backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+            bottom: const TabBar(
+              indicatorColor: Colors.green,
+              labelColor: Colors.white,
+              tabs: [
+                Tab(
+                    child: Text(
+                  'Login',
+                  style: TextStyle(fontSize: 20),
+                )),
+                Tab(child: Text('Register', style: TextStyle(fontSize: 20)))
+              ],
+            )),
+        body: const TabBarView(
+          children: [LoginScreen(), RegisterScreen()],
+        ),
       ),
     );
   }

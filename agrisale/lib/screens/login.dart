@@ -16,10 +16,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 150,
-        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      ),
+      // appBar: AppBar(
+      //   toolbarHeight: 150,
+      //   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(25, 10, 20, 4),
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const MyAppBar(),
+              // const MyAppBar(),
               const SizedBox(height: 20),
               const Text('Sign In',
                   style: TextStyle(
@@ -77,7 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Text(
                     "Don't have an Account? ",
-                    style: TextStyle(fontSize: 14),
+                    style:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
                   ),
                   SizedBox(width: 10),
                   Text(
