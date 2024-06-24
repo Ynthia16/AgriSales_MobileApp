@@ -1,4 +1,4 @@
-import 'package:agrisale/components/button.dart';
+// import 'package:agrisale/components/button.dart';
 import 'package:flutter/material.dart';
 
 class ProfileAppBar extends StatelessWidget {
@@ -16,7 +16,9 @@ class ProfileAppBar extends StatelessWidget {
               fontSize: 17.5, fontWeight: FontWeight.w600, color: Colors.white),
         ),
         centerTitle: true,
-        leading: const Icon(Icons.arrow_back_rounded),
+        leading: IconButton(
+            onPressed: () => {Navigator.pop(context)},
+            icon: const Icon(Icons.arrow_back_outlined)),
         actions: [
           IconButton(
               onPressed: () => {}, icon: const Icon(Icons.notifications_none)),

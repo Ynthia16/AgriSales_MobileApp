@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({super.key, required this.buttonWord});
+  const MyButton({super.key, required this.buttonWord, required this.screenName});
 
   final String buttonWord;
+  final Widget screenName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +14,12 @@ class MyButton extends StatelessWidget {
         height: 45,
         width: 350,
         child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder:(context) => screenName),
+              );
+            },
             style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).primaryColor,
                 // disabledBackgroundColor: Colors.blue,

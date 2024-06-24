@@ -1,4 +1,5 @@
 import 'package:agrisale/components/button.dart';
+import 'package:agrisale/screens/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/profile_app_bar.dart';
 // import 'package:flutter/widgets.dart';
@@ -17,7 +18,7 @@ class MyProfileScreen extends StatelessWidget {
             alignment: Alignment.center,
             clipBehavior: Clip.none,
             children: [
-              const ProfileAppBar(text:'Profile'),
+              const ProfileAppBar(text: 'Profile'),
               Positioned(
                 top: 140,
                 child: CircleAvatar(
@@ -43,27 +44,34 @@ class MyProfileScreen extends StatelessWidget {
                     color: Colors.black, fontWeight: FontWeight.w400)),
             const SizedBox(height: 15),
             const SizedBox(
-                width: 200, child: MyButton(buttonWord: 'Edit Profile')),
+                width: 200,
+                child: MyButton(
+                    buttonWord: 'Edit Profile',
+                    screenName: EditProfileScreen())),
             Padding(
               padding: const EdgeInsets.fromLTRB(35, 40, 5, 5),
               child: Column(
                 // mainAxisAlignment: MainAxisAlignment.center,
                 // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Row(
-                        children: [
-                          Icon(Icons.wifi),
-                          SizedBox(width: 13),
-                          Text('Favorites', style: TextStyle(fontSize: 17.5))
-                        ],
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_right_sharp))
-                    ],
+                  InkWell(
+                    highlightColor: const Color.fromARGB(255, 255, 253, 253),
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Row(
+                          children: [
+                            Icon(Icons.wifi),
+                            SizedBox(width: 13),
+                            Text('Favorites', style: TextStyle(fontSize: 17.5))
+                          ],
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_right_sharp))
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 20),
                   InkWell(

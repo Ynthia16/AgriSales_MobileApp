@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               const SizedBox(height: 14),
-              const MyButton(buttonWord: 'Login'),
+              const MyButton(buttonWord: 'Login', screenName: LoginScreen(),),
               const Padding(
                 padding: EdgeInsets.fromLTRB(8, 14, 8, 10),
                 child:

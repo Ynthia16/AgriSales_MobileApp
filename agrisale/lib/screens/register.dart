@@ -1,3 +1,4 @@
+import 'package:agrisale/screens/login.dart';
 import 'package:flutter/material.dart';
 // import 'package:agrisale/components/app_bar.dart';
 import 'package:agrisale/components/button.dart';
@@ -59,7 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               // const MyDropDown(),
 
               // const SizedBox(height: 20),
-              const MyButton(buttonWord: 'Register'),
+              const MyButton(buttonWord: 'Register', screenName: RegisterScreen(),),
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
