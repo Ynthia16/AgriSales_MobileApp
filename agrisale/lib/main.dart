@@ -1,5 +1,7 @@
 import 'package:agrisale/Themes/themes_constant.dart';
 import 'package:agrisale/components/bottom_navigation.dart';
+import 'package:agrisale/components/home_card.dart';
+import 'package:agrisale/components/smaller_card.dart';
 import 'package:agrisale/screens/register.dart';
 // import 'package:agrisale/screens/edit_profile.dart';
 // import 'package:agrisale/screens/profile.dart';
@@ -25,26 +27,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: lightTheme,
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const SplashScreen(),
-          '/onboarding': (context) => const OnBoardScreen(),
-          '/tab_bar': (context) => const MyTabBar(),
-          '/bottom_navigation': (context) => const MainScreen(),
-        });
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => const SplashScreen(),
+        //   '/onboarding': (context) => const OnBoardScreen(),
+        //   '/tab_bar': (context) => const MyTabBar(),
+        //   '/bottom_navigation': (context) => const MainScreen(),
+        // });
 
-    // '/bottom_navigation': (context) => const MainScreen(),
+        // '/bottom_navigation': (context) => const MainScreen(),
 
-    // '/login': (context) => const LoginScreen(),
-    // '/register': (context) => const RegisterScreen(),
-    // '/profile': (context) => const MyProfileScreen(),
+        // '/login': (context) => const LoginScreen(),
+        // '/register': (context) => const RegisterScreen(),
+        // '/profile': (context) => const MyProfileScreen(),
 
-    // home: const SplashScreen()
-    // home: const OnBoardScreen()
-    // home: const RegisterScreen());
-    //  home: const LoginScreen()
-    // home: const MyProfileScreen());
-    // home: const EditProfileScreen());
-    // home: const MainScreen());
+        // home: const SplashScreen()
+        // home: const OnBoardScreen()
+        // home: const RegisterScreen());
+        //  home: const LoginScreen()
+        // home: const MyProfileScreen());
+        // home: const EditProfileScreen());
+        // home: const MainScreen());
+        // home: const HomeCard());
+        home: const SmallCard());
   }
 }

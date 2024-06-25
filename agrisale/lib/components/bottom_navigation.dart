@@ -1,4 +1,5 @@
 import 'package:agrisale/RiverPod/provider.dart';
+import 'package:agrisale/screens/home_screen.dart';
 import 'package:agrisale/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +11,7 @@ class MainScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bodies = [
-      const Center(child: Text('Hello From Home')),
+      const Center(child: HomeScreen()),
       const Center(child: Text('Hello From Favorite')),
       const Center(child: Text('Hello From Settings')),
       const Center(child: MyProfileScreen()),
