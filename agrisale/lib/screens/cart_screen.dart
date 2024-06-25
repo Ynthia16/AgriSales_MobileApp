@@ -18,7 +18,7 @@ class MyCartScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: SizedBox(height: 70, child: MySearchBar()),
-            ), // Search bar at the top
+            ), 
             Expanded(
               child: SingleChildScrollView(
                 child: Column(

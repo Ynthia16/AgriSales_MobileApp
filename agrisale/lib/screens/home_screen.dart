@@ -1,3 +1,4 @@
+import 'package:agrisale/components/search.dart';
 import 'package:agrisale/components/smaller_card.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/home_card.dart';
@@ -63,11 +64,30 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(10.0, 8, 10, 8),
           child: Column(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(child: SmallCard()),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: SizedBox(height: 70, child: MySearchBar()),
+              ),
+              const SizedBox(
+                  child: Padding(
+                padding: EdgeInsets.only(left: 20.0),
+                child: Text('Shop by Category'),
+              )),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: SizedBox(child: SmallCard()),
+              ),
               const SizedBox(height: 20),
+              const SizedBox(
+                  child: Padding(
+                padding: EdgeInsets.only(left: 20.0),
+                child: Text('Recommended'),
+              )),
               Padding(
                 padding: const EdgeInsets.fromLTRB(18, 10, 18, 5),
                 child: SizedBox(

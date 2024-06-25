@@ -52,11 +52,11 @@ class MyApp extends StatelessWidget {
         // home: const MyProfileScreen());
         // home: const EditProfileScreen());
         // home: const MainScreen());
-        // home: const HomeScreen());
-        // home: const HomeCard());
-        // home: const SmallCard());
-        // home: const MyCartCard());
-        // home: const MySearchBar());
-        home: const MyCartScreen());
+        home: const HomeScreen());
+    // home: const HomeCard());
+    // home: const SmallCard());
+    // home: const MyCartCard());
+    // home: const MySearchBar());
+    // home: const MyCartScreen());
   }
 }
