@@ -1,5 +1,6 @@
 import 'package:agrisale/Themes/themes_constant.dart';
 import 'package:agrisale/components/bottom_navigation.dart';
+import 'package:agrisale/components/cart_card.dart';
 import 'package:agrisale/components/home_card.dart';
 import 'package:agrisale/components/smaller_card.dart';
 import 'package:agrisale/screens/register.dart';
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         // home: const EditProfileScreen());
         // home: const MainScreen());
         // home: const HomeCard());
-        home: const SmallCard());
+        // home: const SmallCard());
+        home: const MyCartCard());
   }
 }
