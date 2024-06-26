@@ -1,15 +1,13 @@
 import 'package:agrisale/RiverPod/provider.dart';
-import 'package:agrisale/screens/Buyer_Screens/blog_screen.dart';
+import 'package:agrisale/screens/common_screens/blog_screen.dart';
 import 'package:agrisale/screens/Buyer_Screens/cart_screen.dart';
-// import 'package:agrisale/screens/cart_screen.dart';
 import 'package:agrisale/screens/Buyer_Screens/home_screen.dart';
 import 'package:agrisale/screens/common_screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:agrisale/RiverPod/notifier.dart';
 
 class MainScreen extends ConsumerWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

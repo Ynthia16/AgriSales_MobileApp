@@ -1,6 +1,6 @@
 // import 'package:agrisale/components/input_text.dart';
-import 'package:agrisale/components/button.dart';
-import 'package:agrisale/components/profile_app_bar.dart';
+import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/components/common_components/profile_app_bar.dart';
 import 'package:agrisale/screens/common_screens/profile.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';

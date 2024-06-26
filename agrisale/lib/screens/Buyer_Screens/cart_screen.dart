@@ -1,7 +1,7 @@
-import 'package:agrisale/components/messaging.dart';
+import 'package:agrisale/components/buyer_components/messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:agrisale/components/search.dart';
-import 'package:agrisale/components/cart_card.dart';
+import 'package:agrisale/components/buyer_components/search.dart';
+import 'package:agrisale/components/buyer_components/cart_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:agrisale/RiverPod/cart_provider.dart';
 

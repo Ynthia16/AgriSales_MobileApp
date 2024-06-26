@@ -1,21 +1,18 @@
 import 'package:agrisale/RiverPod/provider.dart';
-import 'package:agrisale/screens/Buyer_Screens/blog_screen.dart';
-import 'package:agrisale/screens/Buyer_Screens/cart_screen.dart';
-// import 'package:agrisale/screens/cart_screen.dart';
-import 'package:agrisale/screens/Buyer_Screens/home_screen.dart';
+import 'package:agrisale/screens/common_screens/blog_screen.dart';
 import 'package:agrisale/screens/common_screens/profile.dart';
 import 'package:agrisale/screens/farmers_screens/farmer_post.dart';
+import 'package:agrisale/screens/farmers_screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:agrisale/RiverPod/notifier.dart';
 
 class MainScreenFarmer extends ConsumerWidget {
-  const MainScreenFarmer({Key? key}) : super(key: key);
+  const MainScreenFarmer({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bodies = [
-      const Center(child: Text('Food')),
+      const Center(child: HomeScreenFarmer()),
       const Center(child: BlogScreen()),
       const Center(child: ProductPost()),
       const Center(child: MyProfileScreen()),

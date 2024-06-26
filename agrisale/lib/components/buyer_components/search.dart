@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:agrisale/RiverPod/provider.dart';
 
 class MySearchBar extends ConsumerWidget {
-  const MySearchBar({Key? key}) : super(key: key);
+  const MySearchBar({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

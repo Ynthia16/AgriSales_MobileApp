@@ -1,9 +1,7 @@
-// import 'package:agrisale/components/input_text.dart';
-import 'package:agrisale/components/button.dart';
-import 'package:agrisale/components/profile_app_bar.dart';
+import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/components/common_components/profile_app_bar.dart';
 import 'package:agrisale/screens/common_screens/profile.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -50,7 +48,6 @@ class EditProfileScreen extends StatelessWidget {
               child: TextField(
                 textAlignVertical: TextAlignVertical.center,
                 keyboardType: TextInputType.name,
-                // labelText: 'Enter Name',
                 style: TextStyle(color: Colors.black, fontSize: 18),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -80,7 +77,6 @@ class EditProfileScreen extends StatelessWidget {
               child: TextField(
                 textAlignVertical: TextAlignVertical.center,
                 keyboardType: TextInputType.name,
-                // labelText: 'Enter Name',
                 style: TextStyle(color: Colors.black, fontSize: 18),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -110,7 +106,6 @@ class EditProfileScreen extends StatelessWidget {
               child: TextField(
                 textAlignVertical: TextAlignVertical.center,
                 keyboardType: TextInputType.name,
-                // labelText: 'Enter Name',
                 style: TextStyle(color: Colors.black, fontSize: 18),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(

@@ -1,7 +1,6 @@
-import 'package:agrisale/components/app_bar.dart';
 import 'package:agrisale/components/buyer_components/bottom_navigation.dart';
-import 'package:agrisale/components/button.dart';
-import 'package:agrisale/components/input_text.dart';
+import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/components/common_components/input_text.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,18 +16,12 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   toolbarHeight: 150,
-      //   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(25, 10, 20, 4),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const MyAppBar(),
               const SizedBox(height: 20),
               const Text('Sign In',
                   style: TextStyle(
@@ -41,8 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20),
               const TextInput(passWord: 'Password', userName: 'Email'),
               const SizedBox(height: 20),
-              // const MyButton(buttonWord: 'Login'),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

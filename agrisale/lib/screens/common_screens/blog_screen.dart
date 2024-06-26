@@ -1,7 +1,7 @@
-import 'package:agrisale/components/search.dart';
+import 'package:agrisale/components/buyer_components/search.dart';
 import 'package:flutter/material.dart';
-import 'package:agrisale/components/blog_card.dart';
-import 'package:agrisale/components/blog_info.dart';
+import 'package:agrisale/components/common_components/blog_card.dart';
+import 'package:agrisale/components/common_components/blog_info.dart';
 
 class BlogScreen extends StatelessWidget {
   const BlogScreen({super.key});

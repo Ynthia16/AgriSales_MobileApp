@@ -1,9 +1,7 @@
-import 'package:agrisale/screens/common_screens/login.dart';
 import 'package:flutter/material.dart';
-// import 'package:agrisale/components/app_bar.dart';
-import 'package:agrisale/components/button.dart';
-import 'package:agrisale/components/input_text.dart';
-import 'package:agrisale/components/dropdown.dart';
+import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/components/common_components/input_text.dart';
+import 'package:agrisale/components/common_components/dropdown.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -17,18 +15,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   toolbarHeight: 150,
-      //   backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
-      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(25, 10, 20, 4),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const MyAppBar(),
               const SizedBox(height: 20),
               const Text('Register',
                   style: TextStyle(
@@ -57,11 +49,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Color.fromARGB(255, 220, 220, 220), fontSize: 18),
                 ),
               ),
-              // const MyDropDown(),
               const SizedBox(height: 25),
               const DropdownMenuExample(),
-
-              // const SizedBox(height: 20),
               const MyButton(
                 buttonWord: 'Register',
                 screenName: RegisterScreen(),

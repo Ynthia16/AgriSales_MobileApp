@@ -1,9 +1,6 @@
-import 'package:agrisale/components/onboard.dart';
-import 'package:agrisale/screens/common_screens/login.dart';
-import 'package:agrisale/components/tab_bar.dart';
-// import 'package:flutter/cupertino.dart';
+import 'package:agrisale/components/common_components/onboard.dart';
+import 'package:agrisale/components/common_components/tab_bar.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
 
 class OnBoardScreen extends StatefulWidget {
   const OnBoardScreen({super.key});
@@ -98,7 +95,6 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         ),
       ),
     );
-    // );
   }
 }
 

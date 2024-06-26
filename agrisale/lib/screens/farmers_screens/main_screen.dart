@@ -1,56 +1,14 @@
-// import 'package:agrisale/screens/cart_screen.dart';
+import 'package:agrisale/components/common_components/blog_info.dart';
 import 'package:flutter/material.dart';
-import 'package:agrisale/components/search.dart';
-import 'package:agrisale/components/smaller_card.dart';
-import 'package:agrisale/components/buyer_components/home_card.dart';
+import 'package:agrisale/components/farmer_components/farmer_card.dart';
+import 'package:agrisale/components/farmer_components/search_bar.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:agrisale/RiverPod/cart_provider.dart';
 
 class HomeScreenFarmer extends ConsumerWidget {
-  const HomeScreenFarmer({Key? key}) : super(key: key);
+  const HomeScreenFarmer({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final List<Map<String, String>> products = [
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Mango',
-        'price': 'Rwf 2000',
-        'unit': 'kg',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Apple',
-        'price': 'Rwf 3000',
-        'unit': 'kg',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Banana',
-        'price': 'Rwf 1500',
-        'unit': 'kg',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Apple',
-        'price': 'Rwf 4000',
-        'unit': 'each',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Pineapple',
-        'price': 'Rwf 4000',
-        'unit': 'each',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Pineapple',
-        'price': 'Rwf 4000',
-        'unit': 'each',
-      },
-      // Add more product details here
-    ];
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -60,50 +18,30 @@ class HomeScreenFarmer extends ConsumerWidget {
             children: [
               const Padding(
                 padding: EdgeInsets.all(8.0),
-                child: SizedBox(height: 70, child: MySearchBar()),
-              ),
-              const SizedBox(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: Text('Shop by Category'),
-                ),
+                child: SizedBox(height: 70, child: MySearchBarFarmer()),
               ),
               const Padding(
                 padding: EdgeInsets.all(8.0),
-                child: SizedBox(child: SmallCard()),
+                child: FarmerCard(),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               const SizedBox(
                 child: Padding(
                   padding: EdgeInsets.only(left: 20.0),
-                  child: Text('Recommended'),
+                  child: Text(
+                    'Trending crop Diseases',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(18, 10, 18, 5),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.75,
-                  child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 15,
-                      childAspectRatio: 0.8,
-                    ),
-                    itemCount: products.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      final product = products[index];
-                      return HomeCard(
-                        image: product['image']!,
-                        title: product['title']!,
-                        price: product['price']!,
-                        unit: product['unit']!,
-                        onAddToCart: (product) {
-                          ref.read(cartProvider.notifier).addToCart(product);
-                        },
-                      );
-                    },
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: List.generate(
+                  10,
+                  (index) => const Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                    child: BlogInfo(),
                   ),
                 ),
               ),

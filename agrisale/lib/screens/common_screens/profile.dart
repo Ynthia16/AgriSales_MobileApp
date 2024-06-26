@@ -1,8 +1,8 @@
-import 'package:agrisale/components/button.dart';
+import 'package:agrisale/components/common_components/button.dart';
 import 'package:agrisale/screens/common_screens/edit_profile.dart';
+import 'package:agrisale/screens/common_screens/login.dart';
 import 'package:flutter/material.dart';
-import 'package:agrisale/components/profile_app_bar.dart';
-// import 'package:flutter/widgets.dart';
+import 'package:agrisale/components/common_components/profile_app_bar.dart';
 
 class MyProfileScreen extends StatelessWidget {
   const MyProfileScreen({super.key});
@@ -51,8 +51,6 @@ class MyProfileScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(35, 40, 5, 5),
               child: Column(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   InkWell(
                     highlightColor: const Color.fromARGB(255, 255, 253, 253),
@@ -89,25 +87,21 @@ class MyProfileScreen extends StatelessWidget {
                   InkWell(
                     highlightColor: const Color.fromARGB(255, 255, 253, 253),
                     onTap: () {},
-                    child: const Row(
+                    child: Row(
                       children: [
-                        Icon(Icons.shopping_bag_outlined),
-                        SizedBox(width: 13),
-                        Text('My orders', style: TextStyle(fontSize: 17.5))
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  InkWell(
-                    highlightColor: const Color.fromARGB(255, 255, 253, 253),
-                    onTap: () {},
-                    child: const Row(
-                      children: [
-                        Icon(Icons.logout_outlined, color: Colors.green),
-                        SizedBox(width: 13),
-                        Text('logout',
-                            style:
-                                TextStyle(fontSize: 17.5, color: Colors.green))
+                        const Icon(Icons.logout_outlined, color: Colors.green),
+                        const SizedBox(width: 13),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const LoginScreen()),
+                              );
+                            },
+                            child: const Text('logout',
+                                style: TextStyle(
+                                    fontSize: 17.5, color: Colors.green)))
                       ],
                     ),
                   )

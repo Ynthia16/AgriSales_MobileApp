@@ -8,19 +8,19 @@ class MyCartCard extends StatelessWidget {
   final VoidCallback onBuyIt;
 
   const MyCartCard({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.price,
     required this.unit,
     required this.onBuyIt,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        margin: const EdgeInsets.all(8.0), // Add some margin between cards
+        margin: const EdgeInsets.all(8.0),
         decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -30,7 +30,7 @@ class MyCartCard extends StatelessWidget {
             )
           ],
           borderRadius: BorderRadius.all(
-            Radius.circular(20.0), // Adjust the values as needed
+            Radius.circular(20.0),
           ),
           color: Colors.white,
         ),
@@ -103,8 +103,8 @@ class MyCartCard extends StatelessWidget {
                   width: 70,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // background
-                      foregroundColor: Colors.white, // foreground
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
                     ),
                     onPressed: onBuyIt,
                     child: const Text(

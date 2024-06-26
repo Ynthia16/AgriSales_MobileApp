@@ -1,4 +1,4 @@
-import 'package:agrisale/screens/Buyer_Screens/blog_read.dart';
+import 'package:agrisale/screens/common_screens/blog_read.dart';
 import 'package:flutter/material.dart';
 
 class BlogInfo extends StatelessWidget {

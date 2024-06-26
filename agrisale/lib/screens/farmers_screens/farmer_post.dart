@@ -1,9 +1,6 @@
-import 'package:agrisale/components/button.dart';
-// import 'package:agrisale/components/profile_app_bar.dart';
-import 'package:agrisale/screens/Buyer_Screens/home_screen.dart';
+import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/screens/farmers_screens/post_screen.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:flutter/widgets.dart';
 
 class ProductPost extends StatelessWidget {
   const ProductPost({super.key});
@@ -53,7 +50,6 @@ class ProductPost extends StatelessWidget {
                 child: TextField(
                   textAlignVertical: TextAlignVertical.center,
                   keyboardType: TextInputType.name,
-                  // labelText: 'Enter Name',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
                     hintText: 'Product name',
@@ -75,7 +71,6 @@ class ProductPost extends StatelessWidget {
                 child: TextField(
                   textAlignVertical: TextAlignVertical.center,
                   keyboardType: TextInputType.name,
-                  // labelText: 'Enter Name',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
                     hintText: 'Part available',
@@ -97,7 +92,6 @@ class ProductPost extends StatelessWidget {
                 child: TextField(
                   textAlignVertical: TextAlignVertical.center,
                   keyboardType: TextInputType.name,
-                  // labelText: 'Enter Name',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
                     hintText: 'Product details',
@@ -119,7 +113,6 @@ class ProductPost extends StatelessWidget {
                 child: TextField(
                   textAlignVertical: TextAlignVertical.center,
                   keyboardType: TextInputType.name,
-                  // labelText: 'Enter Name',
                   style: TextStyle(color: Colors.black, fontSize: 18),
                   decoration: InputDecoration(
                     hintText: 'Price',
@@ -137,7 +130,8 @@ class ProductPost extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const SizedBox(
-                  child: MyButton(buttonWord: 'ADD', screenName: HomeScreen()))
+                  child:
+                      MyButton(buttonWord: 'ADD', screenName: MyPostScreen()))
             ]),
           ),
         ));
