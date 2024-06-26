@@ -1,6 +1,7 @@
 import 'package:agrisale/Themes/themes_constant.dart';
 import 'package:agrisale/components/bottom_navigation.dart';
 import 'package:agrisale/components/cart_card.dart';
+// import 'package:agrisale/components/cart_order.dart';
 import 'package:agrisale/components/home_card.dart';
 import 'package:agrisale/components/search.dart';
 import 'package:agrisale/components/smaller_card.dart';
@@ -8,6 +9,7 @@ import 'package:agrisale/screens/blog_read.dart';
 import 'package:agrisale/screens/blog_screen.dart';
 import 'package:agrisale/screens/cart_screen.dart';
 import 'package:agrisale/screens/farmer_post.dart';
+// import 'package:agrisale/screens/home.dart';
 import 'package:agrisale/screens/home_screen.dart';
 import 'package:agrisale/screens/register.dart';
 // import 'package:agrisale/screens/edit_profile.dart';
@@ -44,9 +46,10 @@ class MyApp extends StatelessWidget {
 
         // '/bottom_navigation': (context) => const MainScreen(),
 
-        // '/login': (context) => const LoginScreen(),
-        // '/register': (context) => const RegisterScreen(),
-        // '/profile': (context) => const MyProfileScreen(),
+        // '/homescreen': (context) => const LoginScreen(),
+        // '/homeCard': (context) => const RegisterScreen(),
+        // '/CartCard': (context) => const MyProfileScreen(),
+        //  '/CartScreen': (context) => const MyCartScreen(cartItems: cartItems),
 
         // home: const SplashScreen()
         // home: const OnBoardScreen()
@@ -54,15 +57,16 @@ class MyApp extends StatelessWidget {
         //  home: const LoginScreen()
         // home: const MyProfileScreen());
         // home: const EditProfileScreen());
-        // home: const MainScreen());
-        // home: const HomeScreen());
-        // home: const HomeCard());
-        // home: const SmallCard());
-        // home: const MyCartCard());
-        // home: const MySearchBar());
-        // home: const MyCartScreen());
-        // home: const BlogScreen());
-        // home: const BlogRead());
-        home: const ProductPost());
+        home: const MainScreen());
+    // home: const HomeScreen());
+    // home: const HomeCard());
+    // home: const SmallCard());
+    // home: const MyCartCard());
+    // home: const MySearchBar());
+    // home: const MyCartScreen());
+    // home: const BlogScreen());
+    // home: const BlogRead());
+    // home: const ProductPost());
+    // home: MyHomeScreen());
   }
 }

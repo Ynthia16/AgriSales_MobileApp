@@ -1,14 +1,17 @@
-import 'package:agrisale/components/search.dart';
+import 'package:agrisale/components/messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:agrisale/components/search.dart';
 import 'package:agrisale/components/cart_card.dart';
-import 'package:flutter/widgets.dart';
-// import 'package:agrisale/components/search.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:agrisale/RiverPod/cart_provider.dart';
 
-class MyCartScreen extends StatelessWidget {
-  const MyCartScreen({super.key});
+class MyCartScreen extends ConsumerWidget {
+  const MyCartScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cartItems = ref.watch(cartProvider);
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 10, 30, 10),
@@ -20,24 +23,109 @@ class MyCartScreen extends StatelessWidget {
               child: SizedBox(height: 70, child: MySearchBar()),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: List.generate(
-                    20,
-                    (index) => const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                      child: MyCartCard(),
+              child: ListView.builder(
+                itemCount: cartItems.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final item = cartItems[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 16.0),
+                    child: MyCartCard(
+                      image: item['image']!,
+                      title: item['title']!,
+                      price: item['price']!,
+                      unit: item['unit']!,
+                      onBuyIt: () {
+                        _showOrderConfirmation(context, item);
+                      },
                     ),
-                  ),
-                ),
+                  );
+                },
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  void _showOrderConfirmation(BuildContext context, Map<String, String> item) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(80, 12, 12, 12),
+          elevation: 1,
+          shadowColor: Colors.black,
+          title: const Text('Order Confirmation',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Color.fromARGB(255, 223, 222, 222))),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Order details: ${item['title']} - ${item['price']}',
+                  style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromARGB(255, 223, 222, 222))),
+              const Text('Farmer Contacts: 0780788899',
+                  style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromARGB(255, 223, 222, 222))),
+              const Text('Delivery address: [User Address]',
+                  style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color.fromARGB(255, 223, 222, 222))),
+              const SizedBox(height: 20),
+              MessagingWidget(
+                farmerPhoneNumber:
+                    '+1234567890', // Replace with actual farmer contact information
+                onMessageSent: (message) {
+                  //Will Handle message sent logic
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.green)),
+            ),
+            TextButton(
+              onPressed: () {
+                // Implement order confirmation logic here
+                Navigator.of(context).pop();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    backgroundColor: Colors.green,
+                    content: Text('Order confirmed!',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                            color: Color.fromARGB(255, 255, 255, 255))),
+                  ),
+                );
+              },
+              child: const Text('Confirm',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.green)),
+            ),
+          ],
+        );
+      },
     );
   }
 }

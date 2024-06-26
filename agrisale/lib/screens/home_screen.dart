@@ -1,14 +1,16 @@
+// import 'package:agrisale/screens/cart_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:agrisale/components/search.dart';
 import 'package:agrisale/components/smaller_card.dart';
-import 'package:flutter/material.dart';
 import 'package:agrisale/components/home_card.dart';
-import 'package:flutter/widgets.dart'; // Ensure the path to home_card.dart is correct
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:agrisale/RiverPod/cart_provider.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final List<Map<String, String>> products = [
       {
         'image': 'assets/images/crop1.png',
@@ -30,27 +32,15 @@ class HomeScreen extends StatelessWidget {
       },
       {
         'image': 'assets/images/crop1.png',
-        'title': 'Pineapple',
+        'title': 'Apple',
         'price': 'Rwf 4000',
         'unit': 'each',
       },
       {
         'image': 'assets/images/crop1.png',
-        'title': 'Mango',
-        'price': 'Rwf 2000',
-        'unit': 'kg',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Apple',
-        'price': 'Rwf 3000',
-        'unit': 'kg',
-      },
-      {
-        'image': 'assets/images/crop1.png',
-        'title': 'Banana',
-        'price': 'Rwf 1500',
-        'unit': 'kg',
+        'title': 'Pineapple',
+        'price': 'Rwf 4000',
+        'unit': 'each',
       },
       {
         'image': 'assets/images/crop1.png',
@@ -66,7 +56,6 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10.0, 8, 10, 8),
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
@@ -74,20 +63,22 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(height: 70, child: MySearchBar()),
               ),
               const SizedBox(
-                  child: Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: Text('Shop by Category'),
-              )),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text('Shop by Category'),
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: SizedBox(child: SmallCard()),
               ),
               const SizedBox(height: 20),
               const SizedBox(
-                  child: Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                child: Text('Recommended'),
-              )),
+                child: Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text('Recommended'),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(18, 10, 18, 5),
                 child: SizedBox(
@@ -108,6 +99,9 @@ class HomeScreen extends StatelessWidget {
                         title: product['title']!,
                         price: product['price']!,
                         unit: product['unit']!,
+                        onAddToCart: (product) {
+                          ref.read(cartProvider.notifier).addToCart(product);
+                        },
                       );
                     },
                   ),

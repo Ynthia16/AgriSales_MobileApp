@@ -1,9 +1,12 @@
 import 'package:agrisale/RiverPod/provider.dart';
+import 'package:agrisale/screens/blog_screen.dart';
+import 'package:agrisale/screens/cart_screen.dart';
+// import 'package:agrisale/screens/cart_screen.dart';
 import 'package:agrisale/screens/home_screen.dart';
 import 'package:agrisale/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:agrisale/RiverPod/notifier.dart';
+// import 'package:agrisale/RiverPod/notifier.dart';
 
 class MainScreen extends ConsumerWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -12,8 +15,8 @@ class MainScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final bodies = [
       const Center(child: HomeScreen()),
-      const Center(child: Text('Hello From Favorite')),
-      const Center(child: Text('Hello From Settings')),
+      const Center(child: MyCartScreen()),
+      const Center(child: BlogScreen()),
       const Center(child: MyProfileScreen()),
     ];
 
@@ -34,9 +37,9 @@ class MainScreen extends ConsumerWidget {
               label: 'Home',
               backgroundColor: Color.fromARGB(255, 252, 252, 252)),
           BottomNavigationBarItem(
-              icon: Icon(Icons.my_library_books), label: 'Blog'),
-          BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart), label: 'Cart'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.my_library_books), label: 'Blog'),
           BottomNavigationBarItem(
               icon: Icon(Icons.person_4_rounded), label: 'Profile')
         ],

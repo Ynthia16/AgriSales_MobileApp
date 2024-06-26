@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 
 class MyCartCard extends StatelessWidget {
-  const MyCartCard({super.key});
+  final String image;
+  final String title;
+  final String price;
+  final String unit;
+  final VoidCallback onBuyIt;
+
+  const MyCartCard({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.price,
+    required this.unit,
+    required this.onBuyIt,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +24,10 @@ class MyCartCard extends StatelessWidget {
         decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
-                color: Color.fromARGB(255, 245, 244, 244),
-                spreadRadius: 1,
-                blurRadius: 8)
+              color: Color.fromARGB(255, 245, 244, 244),
+              spreadRadius: 1,
+              blurRadius: 8,
+            )
           ],
           borderRadius: BorderRadius.all(
             Radius.circular(20.0), // Adjust the values as needed
@@ -36,9 +50,10 @@ class MyCartCard extends StatelessWidget {
                       height: 90, // Adjusted height for the image container
                       width: 120,
                       decoration: BoxDecoration(
-                        image: const DecorationImage(
-                            image: AssetImage('assets/images/crop1.png'),
-                            fit: BoxFit.cover),
+                        image: DecorationImage(
+                          image: AssetImage(image),
+                          fit: BoxFit.cover,
+                        ),
                         border: Border.all(color: Colors.green, width: 2.0),
                         borderRadius: const BorderRadius.all(
                           Radius.circular(13.0), // Adjust the values as needed
@@ -47,23 +62,33 @@ class MyCartCard extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    const Center(
+                    Center(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Oranges',
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600),
+                            title,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                          Text('money',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w300)),
-                          SizedBox(height: 8),
-                          Text('Rwf 2000',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w700)),
+                          Text(
+                            unit,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            price,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
                         ],
                       ),
                     )
@@ -81,7 +106,7 @@ class MyCartCard extends StatelessWidget {
                       backgroundColor: Colors.green, // background
                       foregroundColor: Colors.white, // foreground
                     ),
-                    onPressed: () {},
+                    onPressed: onBuyIt,
                     child: const Text(
                       'BUY IT',
                       style:

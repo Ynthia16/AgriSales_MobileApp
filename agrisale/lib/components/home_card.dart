@@ -5,15 +5,16 @@ class HomeCard extends StatefulWidget {
   final String title;
   final String price;
   final String unit;
+  final Function onAddToCart;
 
-  const HomeCard(
-      {
-      // Key? key,
-      required this.image,
-      required this.title,
-      required this.price,
-      required this.unit,
-      super.key});
+  const HomeCard({
+    required this.image,
+    required this.title,
+    required this.price,
+    required this.unit,
+    required this.onAddToCart,
+    super.key,
+  });
 
   @override
   _HomeCardState createState() => _HomeCardState();
@@ -38,7 +39,9 @@ class _HomeCardState extends State<HomeCard> {
                 height: 150,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(widget.image), fit: BoxFit.cover),
+                    image: AssetImage(widget.image),
+                    fit: BoxFit.cover,
+                  ),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15.0),
                     topRight: Radius.circular(15.0),
@@ -64,7 +67,9 @@ class _HomeCardState extends State<HomeCard> {
                           width: 23,
                           height: 23,
                           child: Icon(
+                            // onPressed: () {},
                             size: 16,
+
                             _isFavorite
                                 ? Icons.favorite
                                 : Icons.favorite_border_outlined,
@@ -76,6 +81,7 @@ class _HomeCardState extends State<HomeCard> {
                   ),
                 ),
               ),
+              // )
             ],
           ),
           Expanded(
@@ -119,6 +125,14 @@ class _HomeCardState extends State<HomeCard> {
                                   setState(() {
                                     _isInCart = !_isInCart;
                                   });
+                                  widget.onAddToCart(
+                                    {
+                                      'image': widget.image,
+                                      'title': widget.title,
+                                      'price': widget.price,
+                                      'unit': widget.unit,
+                                    },
+                                  );
                                 },
                                 child: SizedBox(
                                   width: 20,
