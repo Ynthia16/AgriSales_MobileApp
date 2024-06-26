@@ -62,14 +62,13 @@ class _HomeCardState extends State<HomeCard> {
                           setState(() {
                             _isFavorite = !_isFavorite;
                           });
+                          // Show alert dialog for favorite action
+                          _showFavoriteAlert();
                         },
                         child: SizedBox(
                           width: 23,
                           height: 23,
                           child: Icon(
-                            // onPressed: () {},
-                            size: 16,
-
                             _isFavorite
                                 ? Icons.favorite
                                 : Icons.favorite_border_outlined,
@@ -81,7 +80,6 @@ class _HomeCardState extends State<HomeCard> {
                   ),
                 ),
               ),
-              // )
             ],
           ),
           Expanded(
@@ -102,20 +100,30 @@ class _HomeCardState extends State<HomeCard> {
                           Text(
                             widget.title,
                             style: const TextStyle(
-                                fontSize: 11, fontWeight: FontWeight.w400),
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                          Text(widget.unit,
-                              style: const TextStyle(
-                                  fontSize: 11, fontWeight: FontWeight.w400)),
+                          Text(
+                            widget.unit,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ],
                       ),
                       const SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(widget.price,
-                              style: const TextStyle(
-                                  fontSize: 12.5, fontWeight: FontWeight.bold)),
+                          Text(
+                            widget.price,
+                            style: const TextStyle(
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           ClipOval(
                             child: Material(
                               color: const Color.fromARGB(255, 214, 214, 214),
@@ -125,6 +133,8 @@ class _HomeCardState extends State<HomeCard> {
                                   setState(() {
                                     _isInCart = !_isInCart;
                                   });
+                                  // Show alert dialog for cart action
+                                  _showCartAlert();
                                   widget.onAddToCart(
                                     {
                                       'image': widget.image,
@@ -138,7 +148,6 @@ class _HomeCardState extends State<HomeCard> {
                                   width: 20,
                                   height: 20,
                                   child: Icon(
-                                    size: 16,
                                     _isInCart
                                         ? Icons.shopping_cart_rounded
                                         : Icons.shopping_cart_outlined,
@@ -146,7 +155,7 @@ class _HomeCardState extends State<HomeCard> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ],
@@ -157,6 +166,96 @@ class _HomeCardState extends State<HomeCard> {
           ),
         ],
       ),
+    );
+  }
+
+  void _showFavoriteAlert() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(200, 55, 55, 55),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Alert',
+                style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ),
+              const Text(
+                'Item added to favorites',
+                style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white),
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'OK',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showCartAlert() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: const Color.fromARGB(200, 55, 55, 55),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Alert',
+                style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ),
+              const Text(
+                'Item added to cart',
+                style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white),
+              ),
+              const Divider(
+                thickness: 1,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'OK',
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

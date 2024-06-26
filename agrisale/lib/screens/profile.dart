@@ -1,5 +1,5 @@
 import 'package:agrisale/components/button.dart';
-import 'package:agrisale/screens/edit_profile.dart';
+import 'package:agrisale/screens/Buyer_Screens/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/profile_app_bar.dart';
 // import 'package:flutter/widgets.dart';

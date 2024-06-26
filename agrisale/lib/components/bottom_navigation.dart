@@ -1,8 +1,8 @@
 import 'package:agrisale/RiverPod/provider.dart';
-import 'package:agrisale/screens/blog_screen.dart';
-import 'package:agrisale/screens/cart_screen.dart';
+import 'package:agrisale/screens/Buyer_Screens/blog_screen.dart';
+import 'package:agrisale/screens/Buyer_Screens/cart_screen.dart';
 // import 'package:agrisale/screens/cart_screen.dart';
-import 'package:agrisale/screens/home_screen.dart';
+import 'package:agrisale/screens/Buyer_Screens/home_screen.dart';
 import 'package:agrisale/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
