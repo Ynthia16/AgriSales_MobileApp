@@ -6,8 +6,8 @@ import 'package:agrisale/screens/common_screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MainScreen extends ConsumerWidget {
-  const MainScreen({super.key});
+class MainScreenBuyer extends ConsumerWidget {
+  const MainScreenBuyer({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

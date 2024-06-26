@@ -1,6 +1,7 @@
-import 'package:agrisale/components/buyer_components/bottom_navigation.dart';
+import 'package:agrisale/screens/Main_screens/Buyer_MainScreen/bottom_navigation.dart';
 import 'package:agrisale/components/common_components/button.dart';
 import 'package:agrisale/components/common_components/input_text.dart';
+import 'package:agrisale/screens/Main_screens/Farmer_MainScreen/buttom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -64,7 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 14),
               const MyButton(
                 buttonWord: 'Login',
-                screenName: MainScreen(),
+                screenName: MainScreenBuyer(),
+                // screenName: MainScreenFarmer(),
               ),
               const Padding(
                 padding: EdgeInsets.fromLTRB(8, 14, 8, 10),
