@@ -34,13 +34,13 @@ class ProductPost extends StatelessWidget {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text('Enter Image'),
               SizedBox(
-                  height: 50,
+                  height: 70,
                   child: IconButton(
                       color: Colors.green,
-                      iconSize: 50,
+                      iconSize: 80,
                       onPressed: () {},
                       icon: const Icon(Icons.post_add_sharp))),
-              const SizedBox(height: 10),
+              const SizedBox(height: 35),
               const Text(
                 'The first image is the title image Grab and draw the image to change the order',
                 style: TextStyle(
@@ -137,7 +137,7 @@ class ProductPost extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const SizedBox(
-                  child: MyButton(buttonWord: 'POST', screenName: HomeScreen()))
+                  child: MyButton(buttonWord: 'ADD', screenName: HomeScreen()))
             ]),
           ),
         ));

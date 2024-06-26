@@ -6,8 +6,8 @@ import 'package:agrisale/components/buyer_components/home_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:agrisale/RiverPod/cart_provider.dart';
 
-class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreenFarmer extends ConsumerWidget {
+  const HomeScreenFarmer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

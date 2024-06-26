@@ -1,4 +1,4 @@
-import 'package:agrisale/screens/login.dart';
+import 'package:agrisale/screens/common_screens/login.dart';
 import 'package:flutter/material.dart';
 // import 'package:agrisale/components/app_bar.dart';
 import 'package:agrisale/components/button.dart';

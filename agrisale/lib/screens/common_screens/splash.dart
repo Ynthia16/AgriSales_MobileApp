@@ -1,4 +1,4 @@
-import 'package:agrisale/screens/onboarding.dart';
+import 'package:agrisale/screens/common_screens/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

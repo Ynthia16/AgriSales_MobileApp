@@ -1,5 +1,5 @@
-import 'package:agrisale/screens/login.dart';
-import 'package:agrisale/screens/register.dart';
+import 'package:agrisale/screens/common_screens/login.dart';
+import 'package:agrisale/screens/common_screens/register.dart';
 import 'package:flutter/material.dart';
 
 class MyTabBar extends StatefulWidget {
