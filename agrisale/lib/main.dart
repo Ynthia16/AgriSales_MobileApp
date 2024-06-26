@@ -1,9 +1,9 @@
 import 'package:agrisale/Themes/themes_constant.dart';
-import 'package:agrisale/components/buyer_components/bottom_navigation.dart';
+import 'package:agrisale/screens/Main_screens/Buyer_MainScreen/bottom_navigation.dart';
 import 'package:agrisale/components/buyer_components/cart_card.dart';
 // import 'package:agrisale/components/cart_order.dart';
 import 'package:agrisale/components/buyer_components/home_card.dart';
-import 'package:agrisale/components/farmer_components/buttom_navigation.dart';
+import 'package:agrisale/screens/Main_screens/Farmer_MainScreen/buttom_navigation.dart';
 import 'package:agrisale/components/buyer_components/search.dart';
 import 'package:agrisale/components/buyer_components/smaller_card.dart';
 import 'package:agrisale/screens/common_screens/blog_read.dart';
