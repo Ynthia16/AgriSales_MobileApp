@@ -10,7 +10,10 @@ class MyCartCard extends StatelessWidget {
         margin: const EdgeInsets.all(8.0), // Add some margin between cards
         decoration: const BoxDecoration(
           boxShadow: [
-            BoxShadow(color: Colors.black, spreadRadius: 1, blurRadius: 8)
+            BoxShadow(
+                color: Color.fromARGB(255, 245, 244, 244),
+                spreadRadius: 1,
+                blurRadius: 8)
           ],
           borderRadius: BorderRadius.all(
             Radius.circular(20.0), // Adjust the values as needed

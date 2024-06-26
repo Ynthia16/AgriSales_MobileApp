@@ -4,7 +4,10 @@ import 'package:agrisale/components/cart_card.dart';
 import 'package:agrisale/components/home_card.dart';
 import 'package:agrisale/components/search.dart';
 import 'package:agrisale/components/smaller_card.dart';
+import 'package:agrisale/screens/blog_read.dart';
+import 'package:agrisale/screens/blog_screen.dart';
 import 'package:agrisale/screens/cart_screen.dart';
+import 'package:agrisale/screens/farmer_post.dart';
 import 'package:agrisale/screens/home_screen.dart';
 import 'package:agrisale/screens/register.dart';
 // import 'package:agrisale/screens/edit_profile.dart';
@@ -52,11 +55,14 @@ class MyApp extends StatelessWidget {
         // home: const MyProfileScreen());
         // home: const EditProfileScreen());
         // home: const MainScreen());
-        home: const HomeScreen());
-    // home: const HomeCard());
-    // home: const SmallCard());
-    // home: const MyCartCard());
-    // home: const MySearchBar());
-    // home: const MyCartScreen());
+        // home: const HomeScreen());
+        // home: const HomeCard());
+        // home: const SmallCard());
+        // home: const MyCartCard());
+        // home: const MySearchBar());
+        // home: const MyCartScreen());
+        // home: const BlogScreen());
+        // home: const BlogRead());
+        home: const ProductPost());
   }
 }

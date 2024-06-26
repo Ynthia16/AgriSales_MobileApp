@@ -18,9 +18,10 @@ class MyCartScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: SizedBox(height: 70, child: MySearchBar()),
-            ), 
+            ),
             Expanded(
               child: SingleChildScrollView(
+                physics: const NeverScrollableScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: List.generate(
