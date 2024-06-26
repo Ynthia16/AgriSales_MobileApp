@@ -1,29 +1,10 @@
 import 'package:agrisale/Themes/themes_constant.dart';
 import 'package:agrisale/screens/Main_screens/Buyer_MainScreen/bottom_navigation.dart';
-import 'package:agrisale/components/buyer_components/cart_card.dart';
-// import 'package:agrisale/components/cart_order.dart';
-import 'package:agrisale/components/buyer_components/home_card.dart';
-import 'package:agrisale/screens/Main_screens/Farmer_MainScreen/buttom_navigation.dart';
-import 'package:agrisale/components/buyer_components/search.dart';
-import 'package:agrisale/components/buyer_components/smaller_card.dart';
-import 'package:agrisale/screens/common_screens/blog_read.dart';
-import 'package:agrisale/screens/common_screens/blog_screen.dart';
-import 'package:agrisale/screens/Buyer_Screens/cart_screen.dart';
-import 'package:agrisale/screens/farmers_screens/farmer_post.dart';
-// import 'package:agrisale/screens/home.dart';
-import 'package:agrisale/screens/Buyer_Screens/home_screen.dart';
-import 'package:agrisale/screens/common_screens/register.dart';
-// import 'package:agrisale/screens/edit_profile.dart';
-// import 'package:agrisale/screens/profile.dart';
 import 'package:agrisale/components/common_components/tab_bar.dart';
-// import 'package:agrisale/screens/login.dart';
 import 'package:agrisale/screens/common_screens/onboarding.dart';
-// import 'package:agrisale/screens/register.dart';
 import 'package:agrisale/screens/common_screens/splash.dart';
-import 'package:agrisale/screens/farmers_screens/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -32,45 +13,28 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of our application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: lightTheme,
-        // initialRoute: '/',
-        // routes: {
-        //   '/': (context) => const SplashScreen(),
-        //   '/onboarding': (context) => const OnBoardScreen(),
-        //   '/tab_bar': (context) => const MyTabBar(),
-        //   '/bottom_navigation': (context) => const MainScreen(),
-        // });
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/onboarding': (context) => const OnBoardScreen(),
+          '/tab_bar': (context) => const MyTabBar(),
+          // this is how we are doing it before we integrate the firebase
+          //and firestore to retrive information , so we will be using this approach in the meantime
 
-        // '/bottom_navigation': (context) => const MainScreen(),
+          // use this if you want to see what the buyer on his main screen
+          //(if the user chooses buyer as the user type while logging in )
+          '/bottom_navigation': (context) => const MainScreenBuyer(),
 
-        // '/homescreen': (context) => const LoginScreen(),
-        // '/homeCard': (context) => const RegisterScreen(),
-        // '/CartCard': (context) => const MyProfileScreen(),
-        //  '/CartScreen': (context) => const MyCartScreen(cartItems: cartItems),
+          // uncomment this to see the main screen of the farmer
+          // (if the user chooses farmer as the user type while logging in )
 
-        // home: const SplashScreen()
-        // home: const OnBoardScreen()
-        // home: const RegisterScreen());
-        //  home: const LoginScreen()
-        // home: const MyProfileScreen());
-        // home: const EditProfileScreen());
-        // home: const MainScreen());
-
-        // home: const HomeScreen());
-        // home: const HomeCard());
-        // home: const SmallCard());
-        // home: const MyCartCard());
-        // home: const MySearchBar());
-        // home: const MyCartScreen());
-        // home: const BlogScreen());
-        // home: const BlogRead());
-        // home: const ProductPost());
-        // home: MyHomeScreen());
-        home: const MainScreenFarmer());
+          // '/bottom_navigation': (context) => const MainScreenFarmer(),
+        });
   }
 }
