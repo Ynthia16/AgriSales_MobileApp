@@ -2,6 +2,7 @@ import 'package:agrisale/screens/Main_screens/Buyer_MainScreen/bottom_navigation
 import 'package:agrisale/components/common_components/button.dart';
 import 'package:agrisale/components/common_components/input_text.dart';
 import 'package:agrisale/screens/Main_screens/Farmer_MainScreen/buttom_navigation.dart';
+// import 'package:agrisale/screens/Main_screens/Farmer_MainScreen/buttom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
