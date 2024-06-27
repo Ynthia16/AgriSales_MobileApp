@@ -2,15 +2,31 @@ import 'package:agrisale/screens/common_screens/blog_read.dart';
 import 'package:flutter/material.dart';
 
 class BlogInfo extends StatelessWidget {
-  const BlogInfo({super.key});
+  final String imagePath;
+  final String title;
+  final String date;
+
+  const BlogInfo({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.date,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:(){ 
-         Navigator.push(
+      onTap: () {
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const BlogRead()),
+          MaterialPageRoute(
+            builder: (context) => BlogRead(
+              imagePath: imagePath,
+              title: title,
+              author: 'Author Name', // Pass the author name here
+              date: date,
+            ),
+          ),
         );
       },
       child: Container(
@@ -42,31 +58,30 @@ class BlogInfo extends StatelessWidget {
                     Container(
                       height: 90, // Adjusted height for the image container
                       width: 120,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/images/crop1.png'),
-                            fit: BoxFit.cover),
-                        borderRadius: BorderRadius.all(
+                            image: AssetImage(imagePath), fit: BoxFit.cover),
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(13.0), // Adjust the values as needed
                         ),
                         color: Colors.green,
                       ),
                     ),
                     const SizedBox(width: 10),
-                    const Center(
+                    Center(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Corn Crop diseases',
-                            style: TextStyle(
+                            title,
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.w600),
                           ),
-                          Text('13 Jan 2024',
-                              style: TextStyle(
+                          Text(date,
+                              style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w300)),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                         ],
                       ),
                     )
@@ -80,3 +95,4 @@ class BlogInfo extends StatelessWidget {
     );
   }
 }
+

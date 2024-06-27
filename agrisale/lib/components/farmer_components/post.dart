@@ -124,7 +124,7 @@ class _HomeCard2State extends State<HomeCard2> {
             child: Padding(
               padding: const EdgeInsets.all(2),
               child: SingleChildScrollView(
-                physics: const NeverScrollableScrollPhysics(),
+                // physics: const NeverScrollableScrollPhysics(),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 3, 8, 2),
                   child: Column(

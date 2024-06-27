@@ -16,7 +16,9 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
   Widget build(BuildContext context) {
     return DropdownMenu<String>(
       label: const Text('UserType'),
-      width: 500,
+      
+      
+      width: 340,
       initialSelection: list.first,
       onSelected: (String? value) {
         setState(() {

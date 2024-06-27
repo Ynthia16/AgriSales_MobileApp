@@ -9,10 +9,44 @@ class HomeScreenFarmer extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    
+    final List<Map<String, String>> blogData = [
+      {
+        'imagePath': 'assets/images/crop1.png',
+        'title': 'Corn Crop diseases',
+        'date': '13 Jan 2024'
+      },
+      {
+        'imagePath': 'assets/images/crop2.jpg',
+        'title': 'Rice Cultivation Tips',
+        'date': '10 Feb 2021'
+      },
+      {
+        'imagePath': 'assets/images/crop3.jpg',
+        'title': 'Rice Cultivation Tips',
+        'date': '10 Feb 2021'
+      },
+      {
+        'imagePath': 'assets/images/crop4.jpg',
+        'title': 'Rice Cultivation Tips',
+        'date': '10 Feb 2021'
+      },
+      {
+        'imagePath': 'assets/images/crop5.jpg',
+        'title': 'Rice Cultivation Tips',
+        'date': '10 Feb 2021'
+      },
+      {
+        'imagePath': 'assets/images/crop6.jpg',
+        'title': 'Rice Cultivation Tips',
+        'date': '10 Feb 2021'
+      },
+    ];
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10.0, 8, 10, 8),
+          padding: const EdgeInsets.fromLTRB(10.0, 10, 10, 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,14 +70,13 @@ class HomeScreenFarmer extends ConsumerWidget {
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List.generate(
-                  10,
-                  (index) => const Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                    child: BlogInfo(),
-                  ),
-                ),
+                children: blogData.map((data) {
+                  return BlogInfo(
+                    imagePath: data['imagePath']!,
+                    title: data['title']!,
+                    date: data['date']!,
+                  );
+                }).toList(),
               ),
             ],
           ),

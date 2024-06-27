@@ -50,7 +50,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(height: 25),
-              const DropdownMenuExample(),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: DropdownMenuExample(),
+              ),
+              const SizedBox(height: 10),
               const MyButton(
                 buttonWord: 'Register',
                 screenName: RegisterScreen(),

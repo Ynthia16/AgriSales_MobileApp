@@ -71,7 +71,7 @@ class MyProfileScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 15),
                   InkWell(
                     highlightColor: const Color.fromARGB(255, 255, 253, 253),
                     onTap: () {},
@@ -83,7 +83,7 @@ class MyProfileScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 18),
                   InkWell(
                     highlightColor: const Color.fromARGB(255, 255, 253, 253),
                     onTap: () {},

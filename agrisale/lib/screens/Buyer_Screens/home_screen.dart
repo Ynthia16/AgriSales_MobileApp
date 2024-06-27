@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:agrisale/RiverPod/cart_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,25 +19,37 @@ class HomeScreen extends ConsumerWidget {
         'unit': 'kg',
       },
       {
-        'image': 'assets/images/crop1.png',
+        'image': 'assets/images/crop2.jpg',
         'title': 'Apple',
         'price': 'Rwf 3000',
         'unit': 'kg',
       },
       {
-        'image': 'assets/images/crop1.png',
+        'image': 'assets/images/crop3.jpg',
         'title': 'Banana',
         'price': 'Rwf 1500',
         'unit': 'kg',
       },
       {
-        'image': 'assets/images/crop1.png',
+        'image': 'assets/images/crop4.jpg',
         'title': 'Apple',
         'price': 'Rwf 4000',
         'unit': 'each',
       },
       {
-        'image': 'assets/images/crop1.png',
+        'image': 'assets/images/crop5.jpg',
+        'title': 'Pineapple',
+        'price': 'Rwf 4000',
+        'unit': 'each',
+      },
+      {
+        'image': 'assets/images/crop6.jpg',
+        'title': 'Pineapple',
+        'price': 'Rwf 4000',
+        'unit': 'each',
+      },
+      {
+        'image': 'assets/images/crop7.jpg',
         'title': 'Pineapple',
         'price': 'Rwf 4000',
         'unit': 'each',
@@ -59,7 +71,7 @@ class HomeScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.fromLTRB(8.0, 20, 8, 5),
                 child: SizedBox(height: 70, child: MySearchBar()),
               ),
               const SizedBox(
@@ -88,7 +100,7 @@ class HomeScreen extends ConsumerWidget {
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
-                      mainAxisSpacing: 15,
+                      mainAxisSpacing: 25,
                       childAspectRatio: 0.8,
                     ),
                     itemCount: products.length,

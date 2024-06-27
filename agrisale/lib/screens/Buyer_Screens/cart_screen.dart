@@ -54,14 +54,14 @@ class MyCartScreen extends ConsumerWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: const Color.fromARGB(80, 12, 12, 12),
+          surfaceTintColor: const Color.fromARGB(255, 0, 0, 0),
           elevation: 1,
           shadowColor: Colors.black,
           title: const Text('Order Confirmation',
               style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Color.fromARGB(255, 223, 222, 222))),
+                  color: Color.fromARGB(255, 67, 66, 66))),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,17 +70,17 @@ class MyCartScreen extends ConsumerWidget {
                   style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
-                      color: Color.fromARGB(255, 223, 222, 222))),
+                      color: Color.fromARGB(255, 67, 66, 66))),
               const Text('Farmer Contacts: 0780788899',
                   style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
-                      color: Color.fromARGB(255, 223, 222, 222))),
+                      color: Color.fromARGB(255, 67, 66, 66))),
               const Text('Delivery address: [User Address]',
                   style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
-                      color: Color.fromARGB(255, 223, 222, 222))),
+                      color: Color.fromARGB(255, 67, 66, 66))),
               const SizedBox(height: 20),
               MessagingWidget(
                 farmerPhoneNumber:
@@ -99,7 +99,7 @@ class MyCartScreen extends ConsumerWidget {
               child: const Text('Cancel',
                   style: TextStyle(
                       fontSize: 15,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w700,
                       color: Colors.green)),
             ),
             TextButton(
@@ -120,7 +120,7 @@ class MyCartScreen extends ConsumerWidget {
               child: const Text('Confirm',
                   style: TextStyle(
                       fontSize: 15,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w700,
                       color: Colors.green)),
             ),
           ],

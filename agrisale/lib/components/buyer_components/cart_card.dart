@@ -37,7 +37,7 @@ class MyCartCard extends StatelessWidget {
         child: ConstrainedBox(
           constraints: const BoxConstraints(
             minHeight: 130,
-            maxHeight: 130,
+            maxHeight: 140,
           ),
           child: Stack(
             children: [
@@ -48,7 +48,7 @@ class MyCartCard extends StatelessWidget {
                   children: [
                     Container(
                       height: 90, // Adjusted height for the image container
-                      width: 120,
+                      width: 100,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(image),
@@ -96,7 +96,7 @@ class MyCartCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 18,
+                bottom: 12,
                 right: 10,
                 child: SizedBox(
                   height: 25,

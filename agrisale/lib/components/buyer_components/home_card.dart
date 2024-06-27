@@ -28,7 +28,7 @@ class _HomeCardState extends State<HomeCard> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 100,
-      height: 240,
+      height: 260,
       child: Column(
         children: [
           Stack(
@@ -36,7 +36,7 @@ class _HomeCardState extends State<HomeCard> {
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
                 width: 160,
-                height: 150,
+                height: 140,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(widget.image),
@@ -69,6 +69,7 @@ class _HomeCardState extends State<HomeCard> {
                           width: 23,
                           height: 23,
                           child: Icon(
+                            size: 18,
                             _isFavorite
                                 ? Icons.favorite
                                 : Icons.favorite_border_outlined,
@@ -145,9 +146,10 @@ class _HomeCardState extends State<HomeCard> {
                                   );
                                 },
                                 child: SizedBox(
-                                  width: 20,
+                                  width: 22,
                                   height: 20,
                                   child: Icon(
+                                    size: 16,
                                     _isInCart
                                         ? Icons.shopping_cart_rounded
                                         : Icons.shopping_cart_outlined,

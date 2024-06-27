@@ -65,8 +65,13 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 14),
               const MyButton(
                 buttonWord: 'Login',
-                screenName: MainScreenBuyer(),
-                // screenName: MainScreenFarmer(),
+
+                // so if you want to navigate from the login screen to the
+                // buyer's main screen use MainScreeenBuyer and
+                //if you need to go to the Farmer's Main Screen uncomment the MainScreenFarmer
+
+                // screenName: MainScreenBuyer(),
+                screenName: MainScreenFarmer(),
               ),
               const Padding(
                 padding: EdgeInsets.fromLTRB(8, 14, 8, 10),

@@ -5,6 +5,15 @@ class SmallCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> imagePaths = [
+      'assets/images/crop7.jpg',
+      'assets/images/crop2.jpg',
+      'assets/images/crop3.jpg',
+      'assets/images/crop4.jpg',
+      'assets/images/crop5.jpg',
+      'assets/images/crop6.jpg',
+    ];
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
@@ -12,8 +21,10 @@ class SmallCard extends StatelessWidget {
         child: ListView.separated(
           separatorBuilder: (context, _) => const SizedBox(width: 12),
           scrollDirection: Axis.horizontal,
-          itemCount: 20,
-          itemBuilder: (BuildContext context, int index) => const SmallerCard(),
+          itemCount: imagePaths.length,
+          itemBuilder: (BuildContext context, int index) {
+            return SmallerCard(imagePath: imagePaths[index]);
+          },
         ),
       ),
     );
@@ -21,7 +32,9 @@ class SmallCard extends StatelessWidget {
 }
 
 class SmallerCard extends StatelessWidget {
-  const SmallerCard({super.key});
+  final String imagePath;
+
+  const SmallerCard({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +43,8 @@ class SmallerCard extends StatelessWidget {
       width: 80, // Ensures the width constraint
       child: Container(
         decoration: BoxDecoration(
-          image: const DecorationImage(
-            image: AssetImage('assets/images/crop1.png'),
+          image: DecorationImage(
+            image: AssetImage(imagePath),
             fit: BoxFit.cover,
           ),
           border: Border.all(color: Colors.green, width: 2.0),

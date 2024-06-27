@@ -128,7 +128,7 @@ class ProductPost extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 12),
               const SizedBox(
                   child:
                       MyButton(buttonWord: 'ADD', screenName: MyPostScreen()))

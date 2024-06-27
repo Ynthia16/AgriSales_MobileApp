@@ -19,7 +19,7 @@ class MessagingWidget extends StatelessWidget {
       children: [
         TextField(
           style: const TextStyle(
-              color: Color.fromARGB(255, 234, 234, 234), fontSize: 15),
+              color: Color.fromARGB(255, 67, 66, 66), fontSize: 15),
           onChanged: (value) {
             message = value;
           },

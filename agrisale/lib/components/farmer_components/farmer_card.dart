@@ -13,7 +13,7 @@ class FarmerCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           _SmallCard(),
-          SizedBox(width: 30),
+          SizedBox(width: 20),
           _SmallCard2(),
         ],
       ),
@@ -35,7 +35,7 @@ class _SmallCard extends StatelessWidget {
       },
       child: SizedBox(
         height: 100,
-        width: 170,
+        width: 150,
         child: Container(
           decoration: const BoxDecoration(
             boxShadow: [
@@ -90,7 +90,7 @@ class _SmallCard2 extends StatelessWidget {
       },
       child: SizedBox(
         height: 100,
-        width: 170,
+        width: 160,
         child: Container(
           decoration: const BoxDecoration(
             boxShadow: [
