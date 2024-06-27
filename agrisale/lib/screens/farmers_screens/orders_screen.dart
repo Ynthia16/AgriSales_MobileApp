@@ -34,53 +34,58 @@ class FarmerOrderScreen extends StatelessWidget {
           itemCount: orders.length,
           itemBuilder: (BuildContext context, int index) {
             final order = orders[index];
-            return Card(
-              surfaceTintColor: Colors.white,
-              elevation: 10,
-              shadowColor: Colors.black,
-              margin: const EdgeInsets.symmetric(vertical: 8.0),
-              child: ListTile(
-                title: Text(order['crop']!),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Buyer: ${order['buyer']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                    Text('Contact: ${order['contact']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                    Text('Address: ${order['address']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                    Text('Quantity: ${order['quantity']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                    Text('Price: ${order['price']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                    Text('Status: ${order['status']}',
-                        style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color.fromARGB(255, 67, 66, 66))),
-                  ],
-                ),
-                trailing: IconButton(
-                  icon: const Icon(Icons.check, color: Colors.green),
-                  onPressed: () {
-                    _showOrderConfirmation(context, order);
-                  },
+            return InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Card(
+                surfaceTintColor: Colors.white,
+                elevation: 10,
+                shadowColor: Colors.black,
+                margin: const EdgeInsets.symmetric(vertical: 8.0),
+                child: ListTile(
+                  title: Text(order['crop']!),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Buyer: ${order['buyer']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                      Text('Contact: ${order['contact']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                      Text('Address: ${order['address']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                      Text('Quantity: ${order['quantity']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                      Text('Price: ${order['price']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                      Text('Status: ${order['status']}',
+                          style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromARGB(255, 67, 66, 66))),
+                    ],
+                  ),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.check, color: Colors.green),
+                    onPressed: () {
+                      _showOrderConfirmation(context, order);
+                    },
+                  ),
                 ),
               ),
             );
