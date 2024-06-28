@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
 
           // '/bottom_navigation': (context) => const MainScreenBuyer(),
 
-          // uncomment this to see the main screen of the farmer
+          // uncomment this so as to see the main screen of the farmer
           // (if the user chooses farmer as the user type while logging in )
           // but please first change the navigation screen in the login screen
 
