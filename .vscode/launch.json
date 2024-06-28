@@ -22,7 +22,7 @@
             "cwd": "agrisale",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release"   
         }
     ]
 }
