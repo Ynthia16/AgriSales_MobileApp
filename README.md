@@ -1,89 +1,27 @@
-# Project README
+# AgroSales: Agritech Project for Trimester 2.3 using Flutter
 
-## Introduction
-Welcome to our mobile application project. This README file will guide you through the initial setup and help you run the application. Please note that we are still in the process of integrating all functionalities. This document will provide the necessary steps to navigate through the main screens of the application.
+## About The Project
+
+AgroSales aims to revolutionize the agricultural landscape in Rwanda and Africa by providing a marketplace mobile application. This platform enables farmers to compete fairly in the market without middlemen. Understanding the structural barriers in many African countries, the app also offers services via USSD technology. Additionally, it features an agronomy support section where farmers can access real-time information and advice to enhance their agricultural practices.
 
 ## Getting Started
-To run this application, please follow the instructions below.
 
-## Navigating Through the Application
-The application currently includes different main screens for buyers and farmers. To view these screens, you need to uncomment the relevant code sections in `main.dart` and the login screen navigation buttons.
+This project serves as a starting point for developing a Flutter application.
 
-### Viewing the Buyer's Main Screen
+### Useful Resources for Beginners:
 
-1. **Ensure that the `MainScreenBuyer` is uncommented as the last screen:**
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-    ```dart
-    // other imports and code
-    void main() {
-      runApp(MyApp());
-    }
+For further assistance with Flutter development, explore the [online documentation](https://docs.flutter.dev/), which provides tutorials, samples, mobile development guidance, and a comprehensive API reference.
 
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return MaterialApp(
-          title: 'Your App Name',
-          home: MainScreenBuyer(), // Uncomment this line
-          // home: MainScreenFarmer(), // Make sure this line is commented
-        );
-      }
-    }
-    ```
+## Prequisites
 
-2. **Go to the login screen file. Uncomment the navigation to `MainScreenBuyer` in the button's `onPressed` event:**
+## Front-End Implementation
 
-    ```dart
-    // other imports and code
-    onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => MainScreenBuyer()), // Uncomment this line
-        // MaterialPageRoute(builder: (context) => MainScreenFarmer()), // Make sure this line is commented
-      );
-    },
-    ```
 
-### Viewing the Farmer's Home Dashboard
 
-1. **Open `main.dart`. Ensure that the `MainScreenFarmer` is uncommented as the last screen:**
 
-    ```dart
-    // other imports and code
-    void main() {
-      runApp(MyApp());
-    }
-
-    class MyApp extends StatelessWidget {
-      @override
-      Widget build(BuildContext context) {
-        return MaterialApp(
-          title: 'Your App Name',
-          home: MainScreenFarmer(), // Uncomment this line
-          // home: MainScreenBuyer(), // Make sure this line is commented
-        );
-      }
-    }
-    ```
-
-2. **Go to the login screen file. Uncomment the navigation to `MainScreenFarmer` in the button's `onPressed` event:**
-
-    ```dart
-    // other imports and code
-    onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => MainScreenFarmer()), // Uncomment this line
-        // MaterialPageRoute(builder: (context) => MainScreenBuyer()), // Make sure this line is commented
-      );
-    },
-    ```
-
-## Troubleshooting
-If you encounter errors after uncommenting the code, ensure only one screen is uncommented at a time. If issues persist, try deleting the screen reference and re-adding it.
-
-## Next Steps
-Our next steps involve integrating the remaining functionalities to make the app fully operational. Stay tuned for updates.
-
-## Contact
-If you face any challenges or have questions, please reach out to us. We are here to help you.
+---
+## Contributors
+@cynthianekesa, @Aristote-code, @Ynthia16
