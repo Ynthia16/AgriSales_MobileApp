@@ -1,26 +1,28 @@
-# AgroSales: Agritech Project for Trimester 2.3 using Flutter
+# AgriSales: Agritech Project for Trimester 2.3 using Flutter
 
 ## About The Project
 
-AgroSales aims to revolutionize the agricultural landscape in Rwanda and Africa by providing a marketplace mobile application. This platform enables farmers to compete fairly in the market without middlemen. Understanding the structural barriers in many African countries, the app also offers services via USSD technology. Additionally, it features an agronomy support section where farmers can access real-time information and advice to enhance their agricultural practices.
+AgriSales aims to revolutionize the agricultural landscape in Rwanda and Africa by providing a marketplace mobile application. This platform enables farmers to compete fairly in the market without middlemen. Understanding the structural barriers in many African countries, the app also offers services via USSD technology. Additionally, it features an agronomy support section where farmers can access real-time information and advice to enhance their agricultural practices.
 
-## Getting Started
 
-This project serves as a starting point for developing a Flutter application.
-
-### Useful Resources for Beginners:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For further assistance with Flutter development, explore the [online documentation](https://docs.flutter.dev/), which provides tutorials, samples, mobile development guidance, and a comprehensive API reference.
-
-## Prequisites
 
 ## Front-End Implementation
+Getting Started
+To get a local copy up and running, follow these steps.
 
+Prerequisites
+Flutter installed on your local machine.
+Visual Studio Code (VSCode) or any other code editor of your choice.
+Git installed on your local machine.
 
+## Installation
+Clone the whole repository please (agrisales-mobile app):
 
+Change directory to the AgriSales folder:
+cd agrisales
+
+## Additional Instructions
+Please refer to the README file within the AgriSales folder for more detailed instructions on setting up and running the app. It is important to follow the instructions provided there to ensure a smooth setup and execution.
 
 ---
 ## Contributors
