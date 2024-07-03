@@ -4,7 +4,7 @@
 
 AgriSales aims to revolutionize the agricultural landscape in Rwanda and Africa by providing a marketplace mobile application. This platform enables farmers to compete fairly in the market without middlemen. Understanding the structural barriers in many African countries, the app also offers services via USSD technology. Additionally, it features an agronomy support section where farmers can access real-time information and advice to enhance their agricultural practices.
 ## our Demo 
-[![Watch the video]](https://raw.githubusercontent.com/Ynthia16/AgriSales_MobileApp/blob/main/Agrisales%20Demo%20(1).mp4)
+[![Watch the video]](https://raw.githubusercontent.com/Ynthia16/AgriSales_MobileApp/blob/main/Agrisales Demo (1).mp4)
 
 ## Front-End Implementation
 Getting Started
