@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TextInput extends StatefulWidget {
-  const TextInput({super.key, required this.userName, required this.passWord});
+  const TextInput({super.key, required this.userName, required this.passWord, required this.controllerEmail, required this.controllerPassword});
 
   final String userName;
   final String passWord;
+  final TextEditingController controllerEmail;
+  final TextEditingController controllerPassword;
 
   @override
   State<TextInput> createState() => _TextInputState();
@@ -27,6 +29,7 @@ class _TextInputState extends State<TextInput> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
+            controller: widget.controllerEmail,
             textAlignVertical: TextAlignVertical.center,
             keyboardType: TextInputType.name,
             style: const TextStyle(color: Colors.black, fontSize: 18),
@@ -44,6 +47,7 @@ class _TextInputState extends State<TextInput> {
           ),
           const SizedBox(height: 24),
           TextField(
+            controller: widget.controllerPassword,
             obscureText: passwordVisible,
             textAlignVertical: TextAlignVertical.center,
             style: const TextStyle(color: Colors.black, fontSize: 18),

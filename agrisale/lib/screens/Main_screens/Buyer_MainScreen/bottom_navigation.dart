@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MainScreenBuyer extends ConsumerWidget {
   const MainScreenBuyer({super.key});
+  
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

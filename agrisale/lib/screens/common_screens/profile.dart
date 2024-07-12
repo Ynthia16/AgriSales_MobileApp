@@ -1,11 +1,46 @@
+// ignore_for_file: avoid_print
+
 import 'package:agrisale/components/common_components/button.dart';
+import 'package:agrisale/components/common_components/tab_bar.dart';
 import 'package:agrisale/screens/common_screens/edit_profile.dart';
 import 'package:agrisale/screens/common_screens/login.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/common_components/profile_app_bar.dart';
 
-class MyProfileScreen extends StatelessWidget {
+class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({super.key});
+
+  @override
+  State<MyProfileScreen> createState() => _MyProfileScreenState();
+}
+
+class _MyProfileScreenState extends State<MyProfileScreen> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  Map<String, dynamic>? userData;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserData();
+  }
+
+  Future<void> fetchUserData() async {
+    User? user = _auth.currentUser;
+    if (user != null) {
+      DocumentSnapshot documentSnapshot =
+          await _db.collection('usersCollection').doc(user.uid).get();
+      setState(() {
+        userData = documentSnapshot.data() as Map<String, dynamic>?;
+      });
+    }
+  }
+
+  Future<void> _signOut() async {
+    await _auth.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +70,12 @@ class MyProfileScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            const Text('Cynthia Nekesa',
-                style: TextStyle(
+            Text('${userData?['userName'] ?? 'No name available'}',
+                style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w700)),
             const SizedBox(height: 10),
-            const Text('Cynthia@gmail.com',
-                style: TextStyle(
+            Text('${userData?['email'] ?? 'No name available'}',
+                style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w400)),
             const SizedBox(height: 15),
             const SizedBox(
@@ -92,12 +127,11 @@ class MyProfileScreen extends StatelessWidget {
                         const Icon(Icons.logout_outlined, color: Colors.green),
                         const SizedBox(width: 13),
                         TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LoginScreen()),
-                              );
+                            onPressed: () async {
+                              await _signOut();
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) => const MyTabBar()));
                             },
                             child: const Text('logout',
                                 style: TextStyle(

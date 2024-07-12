@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "327360375655",
+    "project_id": "agrisales-6aac2",
+    "storage_bucket": "agrisales-6aac2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327360375655:android:7cc5adae52f6f728965dc2",
+        "android_client_info": {
+          "package_name": "com.example.agrisale"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAShZ0nU2mOFwqV3lkuFjcrjTJrZfl2JZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -23,6 +23,7 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
       onSelected: (String? value) {
         setState(() {
           dropdownValue = value!;
+          
         });
       },
       dropdownMenuEntries: list.map<DropdownMenuEntry<String>>((String value) {
