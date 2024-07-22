@@ -34,13 +34,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _userTypeController = TextEditingController();
 
-  // @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  //   TextEditingController;
-  // }
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+    _userTypeController.dispose();
+    super.dispose();
+  }
 
   String _message = '';
 
@@ -57,7 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           .set({
         'email': _emailController.text,
         'userName': _nameController.text,
-        'userType': 'Buyer'
+        'userType': _userTypeController.text,
       });
       // _navigateToHome();
       setState(() {
@@ -115,9 +118,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(height: 25),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: DropdownMenuExample(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownMenuExample(
+                    userTypeController: _userTypeController),
               ),
               const SizedBox(height: 10),
               // const MyButton(

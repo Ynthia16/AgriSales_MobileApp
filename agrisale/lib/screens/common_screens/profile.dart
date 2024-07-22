@@ -74,7 +74,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w700)),
             const SizedBox(height: 10),
-            Text('${userData?['email'] ?? 'No name available'}',
+            Text('${userData?['email'] ?? 'No email available'}',
                 style: const TextStyle(
                     color: Colors.black, fontWeight: FontWeight.w400)),
             const SizedBox(height: 15),
