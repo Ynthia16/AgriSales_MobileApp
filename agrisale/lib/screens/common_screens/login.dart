@@ -22,37 +22,80 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
 
   String _message = '';
+  bool _isLoading = false;
 
   Future<void> _signInWithEmailAndPassword() async {
+
+     if (_formKey.currentState?.validate() ?? false) {
+      setState(() {
+        _isLoading = true;
+      });
+    }
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: _emailController.text,
         password: _passwordController.text,
       );
-      _navigateToHome();
-      setState(() {});
+      User? user = userCredential.user;
+      if (user != null) {
+        DocumentSnapshot userDoc =
+            await _db.collection('usersCollection').doc(user.uid).get();
+        if (userDoc.exists) {
+          String userType = userDoc['userType'];
+
+          if (userType == 'Buyer') {
+            _buyerNavigateToHome();
+          } else if (userType == 'Farmer') {
+            _farmerNavigateToHome();
+          } else {
+            setState(() {
+              _message = 'Unknown user type';
+              // print(_message);
+            });
+          }
+        } else {
+          setState(() {
+            _message = 'User document does not exist';
+            // print(_message);
+          });
+        }
+      }
+      setState(() {
+        _isLoading = false;
+      });
     } catch (e) {
       setState(() {
         _message = 'Failed to sign in with Email & Password\n${e.toString()}';
+        _isLoading = false;
       });
     }
   }
 
-  void _navigateToHome() {
+  void _buyerNavigateToHome() {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => const MainScreenBuyer()),
     );
   }
 
-   @override
+  void _farmerNavigateToHome() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const MainScreenFarmer()),
+    );
+  }
+
+  @override
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
+
   bool? isChecked = false;
 
   @override
@@ -75,6 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: Theme.of(context).textTheme.bodyLarge),
               const SizedBox(height: 20),
               TextInput(
+                 formKey: _formKey,
                   controllerEmail: _emailController,
                   controllerPassword: _passwordController,
                   passWord: 'Password',
@@ -109,17 +153,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 14),
 
-              // const MyButton(
-              //   buttonWord: 'Login',
-
-              // so if you want to navigate from the login screen to the
-              // buyer's main screen use MainScreeenBuyer and
-              //if you need to go to the Farmer's Main Screen uncomment the MainScreenFarmer
-
-              // screenName: MainScreenBuyer(),
-              // screenName: MainScreenFarmer(),
-              // ),
-
               SizedBox(
                 height: 45,
                 width: 350,
@@ -129,9 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
-                        // disabledBackgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
-                        // disabledForegroundColor: Colors.amber,
                         elevation: 5.5,
                         shape: const RoundedRectangleBorder(
                             borderRadius:
@@ -139,10 +170,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         textStyle: const TextStyle(
                           fontSize: 18,
                         )),
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                    child: _isLoading
+                        ? const CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            'Login',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )),
               ),
 
               const Padding(

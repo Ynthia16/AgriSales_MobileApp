@@ -1,8 +1,9 @@
 // ignore_for_file: avoid_print
 
+import 'package:agrisale/components/common_components/tab_bar.dart';
 import 'package:agrisale/screens/common_screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/common_components/button.dart';
 import 'package:agrisale/components/common_components/input_text.dart';
@@ -19,23 +20,12 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _db = FirebaseFirestore.instance;
-  // void create() async {
-  //   try {
-  //     await _db.collection('usersCollection').doc(userCredential.user?.uid).set({
-  //       'email': _emailController.text,
-  //       'userName': _userNameController.text,
-  //       'userType': 'Buyer'
-  //     });
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _userTypeController = TextEditingController();
-
+  final _formKey = GlobalKey<FormState>();
   @override
   void dispose() {
     _emailController.dispose();
@@ -46,8 +36,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   String _message = '';
+  bool _isLoading = false;
 
   Future<void> _registerWithEmailAndPassword() async {
+    if (_formKey.currentState?.validate() ?? false) {
+      setState(() {
+        _isLoading = true;
+      });
+    }
     try {
       UserCredential userCredential =
           await _auth.createUserWithEmailAndPassword(
@@ -62,16 +58,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
         'userName': _nameController.text,
         'userType': _userTypeController.text,
       });
-      // _navigateToHome();
       setState(() {
-        // create();
+        _isLoading = false;
+        _navigateToLogin();
         _message = 'Successfully registered as ${userCredential.user?.email}';
       });
     } catch (e) {
       setState(() {
         _message = 'Failed to register with Email & Password\n${e.toString()}';
+        _isLoading = false;
       });
     }
+  }
+
+  void _navigateToLogin() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const MyTabBar()),
+    );
   }
 
   bool? isChecked = true;
@@ -95,6 +99,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   style: Theme.of(context).textTheme.bodyLarge),
               const SizedBox(height: 20),
               TextInput(
+                  formKey: _formKey,
                   controllerEmail: _emailController,
                   controllerPassword: _passwordController,
                   passWord: 'Password',
@@ -124,19 +129,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     userTypeController: _userTypeController),
               ),
               const SizedBox(height: 10),
-              // const MyButton(
-              //   buttonWord: 'Register',
-              //   screenName: LoginScreen(),
-              // ),
-
-              // ElevatedButton(
-              //   onPressed: () {
-              //     _registerWithEmailAndPassword();
-              //     // create();
-              //   },
-              //   child: const Text('Register with Email'),
-              // ),
-
               SizedBox(
                 height: 45,
                 width: 350,
@@ -156,12 +148,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         textStyle: const TextStyle(
                           fontSize: 18,
                         )),
-                    child: const Text(
-                      'Register',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
+                    child: _isLoading
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            'Register',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )),
               ),
-
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
