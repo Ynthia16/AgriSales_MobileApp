@@ -44,7 +44,12 @@ class _MyFirestoreState extends State<MyFirestore> {
       await _db
           .collection('usersCollection')
           .doc('userData')
-          .update({'userName': 'Rutaganda'});
+          .update({'userName': 'Rutaganda', 'email':'','password':''},
+          
+          
+          
+          
+          );
     } catch (e) {
       print(e);
     }

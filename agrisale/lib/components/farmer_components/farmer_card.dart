@@ -22,7 +22,7 @@ class FarmerCard extends StatelessWidget {
 }
 
 class _SmallCard extends StatelessWidget {
-  const _SmallCard({super.key});
+  const _SmallCard();
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class _SmallCard extends StatelessWidget {
 }
 
 class _SmallCard2 extends StatelessWidget {
-  const _SmallCard2({super.key});
+  const _SmallCard2();
 
   @override
   Widget build(BuildContext context) {

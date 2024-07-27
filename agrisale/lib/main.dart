@@ -9,13 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:agrisale/RiverPod/crop_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(const
+   ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -54,6 +56,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
+      // theme: ThemeData.dark(),
       home: const AuthWrapper(), // Use AuthWrapper as the home widget
     );
   }
