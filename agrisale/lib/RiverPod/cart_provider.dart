@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Cart Notifier to manage cart state
 class CartNotifier extends StateNotifier<List<Map<String, String>>> {
   CartNotifier() : super([]);
 
@@ -17,7 +16,7 @@ class CartNotifier extends StateNotifier<List<Map<String, String>>> {
   }
 }
 
-// Cart Provider
+
 final cartProvider =
     StateNotifierProvider<CartNotifier, List<Map<String, String>>>((ref) {
   return CartNotifier();

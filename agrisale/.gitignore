@@ -41,3 +41,25 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Flutter specific
+**/android/**/gradle-wrapper.jar
+**/android/**/.gradle/
+**/android/**/local.properties
+**/ios/Pods/
+**/ios/.generated/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/web/.dart_tool/
+**/web/build/
+**/macos/.symlinks/
+**/macos/Flutter/ephemeral/
+**/linux/.dart_tool/
+**/linux/flutter/ephemeral/
+**/windows/.dart_tool/
+**/windows/flutter/ephemeral/
+
+# Flutter dependencies
+packages

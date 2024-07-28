@@ -1,4 +1,3 @@
-// import 'package:agrisale/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:agrisale/components/buyer_components/search.dart';
 import 'package:agrisale/components/buyer_components/smaller_card.dart';
@@ -60,7 +59,6 @@ class HomeScreen extends ConsumerWidget {
         'price': 'Rwf 4000',
         'unit': 'each',
       },
-      // Add more product details here
     ];
 
     return Scaffold(

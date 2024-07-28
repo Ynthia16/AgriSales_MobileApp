@@ -8,7 +8,6 @@ class BlogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Example data
     final List<Map<String, String>> blogData = [
       {
         'imagePath': 'assets/images/crop1.png',

@@ -30,7 +30,7 @@ class BlogInfo extends StatelessWidget {
         );
       },
       child: Container(
-        margin: const EdgeInsets.all(8.0), // Add some margin between cards
+        margin: const EdgeInsets.all(8.0),
         decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -39,7 +39,7 @@ class BlogInfo extends StatelessWidget {
                 blurRadius: 3)
           ],
           borderRadius: BorderRadius.all(
-            Radius.circular(20.0), // Adjust the values as needed
+            Radius.circular(20.0), 
           ),
           color: Colors.white,
         ),
@@ -56,13 +56,13 @@ class BlogInfo extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 90, // Adjusted height for the image container
+                      height: 90, 
                       width: 120,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage(imagePath), fit: BoxFit.cover),
                         borderRadius: const BorderRadius.all(
-                          Radius.circular(13.0), // Adjust the values as needed
+                          Radius.circular(13.0), 
                         ),
                         color: Colors.green,
                       ),

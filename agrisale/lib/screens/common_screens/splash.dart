@@ -17,8 +17,11 @@ class _SplashScreenState extends State<SplashScreen>
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const OnBoardScreen()));
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => const OnBoardScreen()),
+        );
+      }
     });
   }
 
@@ -33,32 +36,37 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          decoration: const BoxDecoration(color: Colors.white),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Agri',
-                      style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+        decoration: const BoxDecoration(color: Colors.white),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Agri',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Sale',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Theme.of(context).primaryColor,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(width: 8),
-                    Text('Sale',
-                        style: TextStyle(
-                            fontSize: 40,
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold))
-                  ],
-                ),
-                const Text("Farmer's Choice",
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400))
-              ],
-            ),
-          )),
+                  ),
+                ],
+              ),
+              const Text(
+                "Farmer's Choice",
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

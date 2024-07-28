@@ -1,11 +1,6 @@
-// ignore_for_file: avoid_print
-
 import 'package:agrisale/components/common_components/tab_bar.dart';
-import 'package:agrisale/screens/common_screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:agrisale/components/common_components/button.dart';
 import 'package:agrisale/components/common_components/input_text.dart';
 import 'package:agrisale/components/common_components/dropdown.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -138,9 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Theme.of(context).primaryColor,
-                        // disabledBackgroundColor: Colors.blue,
                         foregroundColor: Colors.white,
-                        // disabledForegroundColor: Colors.amber,
                         elevation: 5.5,
                         shape: const RoundedRectangleBorder(
                             borderRadius:

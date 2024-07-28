@@ -39,8 +39,8 @@ class SmallerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 75, // Ensures the height constraint
-      width: 80, // Ensures the width constraint
+      height: 75, 
+      width: 80,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:agrisale/models/product_model.dart'; // Import your Product model
+import 'package:agrisale/models/product_model.dart';
 
 class ProductNotifier extends StateNotifier<List<Product>> {
   ProductNotifier() : super([]);

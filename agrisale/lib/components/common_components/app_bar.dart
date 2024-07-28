@@ -15,7 +15,6 @@ class _MyAppBarState extends State<MyAppBar> {
     });
   }
 
-  //  final textStyle = Theme.of(context).textTheme.bodyLarge ?? TextStyle();
   @override
   Widget build(BuildContext context) {
     final textStyle =

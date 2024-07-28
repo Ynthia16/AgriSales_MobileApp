@@ -1,5 +1,3 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class TextInput extends StatefulWidget {
@@ -109,7 +107,6 @@ class _TextInputState extends State<TextInput> {
                   },
                 ),
                 alignLabelWithHint: false,
-                // filled: true,
               ),
               keyboardType: TextInputType.visiblePassword,
               textInputAction: TextInputAction.done,

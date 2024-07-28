@@ -42,10 +42,9 @@ class MySearchBar extends ConsumerWidget {
             child: InkWell(
               splashColor: const Color.fromARGB(255, 108, 205, 111),
               onTap: () {
-                // Navigate to cart screen within the bottom navigation bar
                 ref
                     .read(indexBottomNavbarProvider.notifier)
-                    .updateIndex(1); // Index of the cart screen
+                    .updateIndex(1); 
               },
               child: const SizedBox(
                 width: 30,

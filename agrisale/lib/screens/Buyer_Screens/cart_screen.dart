@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:agrisale/RiverPod/cart_provider.dart';
 
 class MyCartScreen extends ConsumerWidget {
-  const MyCartScreen({Key? key}) : super(key: key);
+  const MyCartScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -84,9 +84,8 @@ class MyCartScreen extends ConsumerWidget {
               const SizedBox(height: 20),
               MessagingWidget(
                 farmerPhoneNumber:
-                    '+1234567890', // Replace with actual farmer contact information
+                    '+1234567890', 
                 onMessageSent: (message) {
-                  //Will Handle message sent logic
                 },
               ),
             ],
@@ -104,7 +103,6 @@ class MyCartScreen extends ConsumerWidget {
             ),
             TextButton(
               onPressed: () {
-                // Implement order confirmation logic here
                 Navigator.of(context).pop();
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(

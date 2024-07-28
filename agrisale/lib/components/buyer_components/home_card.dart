@@ -62,7 +62,6 @@ class _HomeCardState extends State<HomeCard> {
                           setState(() {
                             _isFavorite = !_isFavorite;
                           });
-                          // Show alert dialog for favorite action
                           _showFavoriteAlert();
                         },
                         child: SizedBox(
@@ -134,7 +133,6 @@ class _HomeCardState extends State<HomeCard> {
                                   setState(() {
                                     _isInCart = !_isInCart;
                                   });
-                                  // Show alert dialog for cart action
                                   _showCartAlert();
                                   widget.onAddToCart(
                                     {

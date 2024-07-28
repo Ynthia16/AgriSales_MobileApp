@@ -1,7 +1,6 @@
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-// Define a state class to hold your crop data and loading state
 class CropState {
   final List<Map<String, dynamic>> crops;
   final bool isLoading;
@@ -9,7 +8,6 @@ class CropState {
   CropState({required this.crops, required this.isLoading});
 }
 
-// Define the notifier to manage your crop state
 class CropNotifier extends StateNotifier<CropState> {
   CropNotifier() : super(CropState(crops: [], isLoading: false));
 

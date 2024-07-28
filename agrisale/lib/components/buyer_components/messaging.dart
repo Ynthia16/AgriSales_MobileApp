@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MessagingWidget extends StatelessWidget {
   final String
-      farmerPhoneNumber; //  will Replace with actual farmer contact information
+      farmerPhoneNumber; 
   final Function(String) onMessageSent;
 
   const MessagingWidget(
@@ -32,14 +32,9 @@ class MessagingWidget extends StatelessWidget {
         const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
-            // Implement sending message functionality
             if (message.isNotEmpty) {
-              // Here, i can implement logic to send the message
-              // For simplicity, we'll just print the message
-
-              // print('Message sent to farmer: $message');
               onMessageSent(
-                  message); // Notify parent widget about the sent message
+                  message);
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                     backgroundColor: Colors.green,

@@ -56,7 +56,7 @@ class MyCartCard extends StatelessWidget {
                         ),
                         border: Border.all(color: Colors.green, width: 2.0),
                         borderRadius: const BorderRadius.all(
-                          Radius.circular(13.0), // Adjust the values as needed
+                          Radius.circular(13.0), 
                         ),
                         color: Colors.green,
                       ),
