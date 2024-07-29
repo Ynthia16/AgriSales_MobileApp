@@ -1,0 +1,104 @@
+// We initially created 5 Firebase Cloud Functions to guide the backend logic of our app.
+// We didn't manage to use all the five logics though. We used 4 except 'sendOrderNotification'
+// We incorporated the functions in the main code at different instances and not in a consistent flow like shown here. This served as a guide.
+
+// Function 1: createUser
+// Trigger: OnCreate (users node)
+// Creates a new user in the database when a new user signs up.
+import 'package:cloud_functions/cloud_functions.dart';
+Future<void> createUser(UserRecord user) async {
+  final userId = user.uid;
+  final userData = {
+    'name': user.displayName,
+    'email': user.email,
+    'usertype': 'farmer''buyer'
+  };
+await FirebaseDatabase.instance.ref('users/$userId').set(userData);
+}
+
+// Function 2: createProduct
+// Trigger: OnCreate (products node)
+// Creates a new product in the database when a farmer adds a new product.
+import 'package:cloud_functions/cloud_functions.dart';
+Future<void> createProduct(DataSnapshot snapshot, EventContext context) async {
+  final productId = snapshot.key;
+  final productData = snapshot.val();
+  final farmerId = productData['farmer_id'];
+
+  final farmerSnapshot = await FirebaseDatabase.instance.ref('users/$farmerId').once();
+  final farmerData = farmerSnapshot.val();
+  productData['farmer_name'] = farmerData['name'];
+  productData['farmer_phone_number'] = farmerData['phone_number'];
+
+  await FirebaseDatabase.instance.ref('products/$productId').update(productData);
+}
+
+// Function 3: placeOrder
+// Trigger: OnCreate (orders node)
+// Creates a new order in the database when a buyer places an order.
+import 'package:cloud_functions/cloud_functions.dart';
+Future<void> placeOrder(DataSnapshot snapshot, EventContext context) async {
+  final orderId = snapshot.key;
+  final orderData = snapshot.val();
+  final buyerId = orderData['buyer_id'];
+  final productId = orderData['product_id'];
+
+  final buyerSnapshot = await FirebaseDatabase.instance.ref('users/$buyerId').once();
+  final buyerData = buyerSnapshot.val();
+  orderData['buyer_name'] = buyerData['name'];
+  orderData['buyer_phone_number'] = buyerData['phone_number'];
+
+  final productSnapshot = await FirebaseDatabase.instance.ref('products/$productId').once();
+  final productData = productSnapshot.val();
+  orderData['product_name'] = productData['name'];
+  orderData['product_price'] = productData['price'];
+
+  await FirebaseDatabase.instance.ref('orders/$orderId').update(orderData);
+}
+
+// Function 4: updateOrderStatus
+// Trigger: OnUpdate (orders node)
+// Updates the order status when the farmer accepts or delivers the order.
+import 'package:cloud_functions/cloud_functions.dart';
+Future<void> updateOrderStatus(DataSnapshot snapshot, EventContext context) async {
+  final orderId = snapshot.key;
+  final orderData = snapshot.val();
+  final status = orderData['status'];
+
+  if (status == 'accepted') {
+    // Send notification to buyer
+    await FirebaseMessaging.instance.sendToTopic('buyers', {
+      'notification': {
+        'title': 'Order Accepted',
+        'body': 'Your order for ${orderData['product_name']} has been accepted by the farmer.'
+      }
+    });
+  } else if (status == 'delivered') {
+    // Send notification to buyer
+    await FirebaseMessaging.instance.sendToTopic('buyers', {
+      'notification': {
+        'title': 'Order Delivered',
+        'body': 'Your order for ${orderData['product_name']} has been delivered.'
+      }
+    });
+  }
+}
+
+// Function 5: sendOrderNotification
+// Trigger: OnCreate (orders node)
+// Sends a notification to the farmer when a new order is placed.
+import 'package:cloud_functions/cloud_functions.dart';
+Future<void> sendOrderNotification(DataSnapshot snapshot, EventContext context) async {
+  final orderId = snapshot.key;
+  final orderData = snapshot.val();
+  final farmerId = orderData['farmer_id'];
+
+  final farmerSnapshot = await FirebaseDatabase.instance.ref('users/$farmerId').once();
+  final farmerData = farmerSnapshot.val();
+  final notification = {
+    'title': 'New Order',
+    'body': 'You have a new order for ${orderData['product_name']} from ${orderData['buyer_name']}.'
+  };
+
+  await FirebaseMessaging.instance.sendToDevice(farmerData['device_token'], notification);
+}
