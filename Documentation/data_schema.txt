@@ -2,6 +2,61 @@ The diagram below shows the relationships between the different collections and 
 The lines represent the relationships between the entities, and the arrows indicate the direction of the relationships.
 The diagram is simplified and does not capture all the nuances of the data schema. It is more of a conceptual representation of the data schema rather than a strict ERD(Entity-Relationship Diagram).
 
+COLLECTIONS
+
+users
+
+documentId (string): Unique identifier for the user (e.g., "user123")
+email (string): User's email address
+password (string): User's password (hashed for security)
+fullname (string): User's full name
+usertype (string): User's role (e.g., "farmer", "buyer")
+register: button
+
+farmers
+
+documentId (string): Unique identifier for the farmer (e.g., "farmer123")
+username (string): Farmer's full name
+email (string): Farmer's email address
+password (string): Farmer's password (hashed for security)
+actions: [login, viewproductsposted, viewproductsrequested, confirmorder, viewblogs, updateprofile, postproduct, logout]
+phone (string): Farmer's phone number
+location (string): Farmer's location (e.g., district, sector)
+crops (array of strings): List of crops the farmer grows
+
+buyers
+
+documentId (string): Unique identifier for the buyer (e.g., "buyer123")
+username (string): Buyer's full name
+email (string): Buyer's email address
+password (string): Buyer's password (hashed for security)
+actions: [login, viewcrops, viewblogs, updateprofile, addtocart, addtofavourite, buyitem, confirmorder, logout]
+phone (string): Buyer's phone number
+location (string): Buyer's location (e.g., district, sector)
+
+crops
+
+documentId (string): Unique identifier for the crop (e.g., "crop123")
+name (string): Crop name (e.g., "maize", "beans")
+description (string): Crop description
+price (number): Crop price per unit
+unit (string): Unit of measurement (e.g., "kg")
+
+orders
+
+documentId (string): Unique identifier for the order (e.g., "order123")
+farmerId (string): Farmer's document ID
+buyerId (string): Buyer's document ID
+cropId (string): Crop's document ID
+quantity (number): Quantity of the crop ordered
+status (string): Order status (e.g., "pending", "accepted", "delivered")
+
+SUBCOLLECTIONS
+
+farmers/{farmerId}/crops: A subcollection of crops for each farmer
+buyers/{buyerId}/orders: A subcollection of orders for each buyer
+crops/{cropId}/orders: A subcollection of orders for each crop
+
                              +---------------+
                              |  User         |
                              +---------------+
