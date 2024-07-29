@@ -1,0 +1,68 @@
+                             +---------------+
+                             |  User         |
+                             +---------------+
+                             |  - id         |
+                             |  - email      |
+                             |  - password   |
+                             |  - fullname   | 
+                             |  - usertype   |
+                             |  - register   |
+ ____________________________+---------------+_______________________
+|                                                                    |
+|                                                                    |
+v                                                                    v
+
++-------------------------+                       +------------------+
+|  Farmer                 |                       |  Buyer           |
++-------------------------+                       +------------------+
+|  - id                   |                       |  - id            |
+|  - username             |                       |  - username      |
+|  - email                |                       |  - email         |
+|  - password             |                       |  - password      |
+|  - login                |                       |  - login         |
+|  - viewproductsposted   |                       |  - viewcrops     |
+|  - viewproductsrequested|                       |  - viewblogs     |
+|  - confirmorder         |                       |  - updateprofile |
+|  - viewblogs            |                       |  - addtocart     |
+|  - updateprofile        |                       |  - addtofavourite|
+|  - postproduct          |                       |  - buyitem       |
+|  - logout               |                       |  - confirmorder  |
+|                         |                       |  - logout        |
++-------------------------+                       +------------------+
+
+                          |                                          |
+                          |                                          |
+                          v                                          v
+
+          +---------------+                          +---------------+
+          |  Crop         |                          |  Order        |
+          +---------------+                          +---------------+
+          |  - id         |                          |  - id         |
+          |  - name       |                          |  - farmerId   |
+          |  - description|                          |  - buyerId    |
+          |  - price      |                          |  - cropId     |
+          |  - unit       |                          |  - quantity   |
+                                                     |  - status     |
+                                                     +---------------+
+
+                          |                                          |
+                          |                                          |
+                          v                                          v
+
+          +---------------+                          +---------------+
+          |  FarmerCrops  |                          |  BuyerOrders  |
+          +---------------+                          +---------------+
+          |  - cropId     |                          |  - orderId    |
+          |  - quantity   |                          |  - status     |
+          +---------------+                          +---------------+
+
+                          |                                          |
+                          |                                          |
+                          v                                          v
+
+          +---------------+
+           |  CropOrders  |
+          +---------------+
+          |  - orderId    |
+          |  - quantity   |
+          +---------------+
