@@ -11,6 +11,7 @@ Future<void> createUser(UserRecord user) async {
   final userData = {
     'name': user.displayName,
     'email': user.email,
+    'password': user.password,
     'usertype': 'farmer''buyer'
   };
 await FirebaseDatabase.instance.ref('users/$userId').set(userData);
