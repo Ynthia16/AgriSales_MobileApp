@@ -18,7 +18,7 @@ AgriSales aims to revolutionize the agricultural landscape in Rwanda and Africa 
 3. Alternatively, download the app or use the already available app that we used for our project testing.
 
 ## Docs and Videos
-- Project Proposal: [![Agrisale project proposal]](https://docs.google.com/document/d/1miVxpPlrHXNANIehPhZvftHHxF1OOzooBq3_m38gU2g/edit?usp=sharing)
+- Project Proposal: [[Agrisale project proposal]](https://docs.google.com/document/d/1miVxpPlrHXNANIehPhZvftHHxF1OOzooBq3_m38gU2g/edit?usp=sharing)
 - Figma Design: [![Project User Interface Design]](https://www.figma.com/design/uFf9JQbFSYzUokgaVqPLnS/AgriSales-(Community)-FlutterDevs%F0%9F%98%82Lol?node-id=0-1&t=qENXlbv1eKP7TPV4-1)
 - Front-End Implementation Demo: [![Front-end video]](https://raw.githubusercontent.com/Ynthia16/AgriSales_MobileApp/main/AgrisalesDemo.mp4)
 - Authentication, Business Logic and Backend Demo: [![Back-end video]](https://docs.google.com/document/d/1HoI0YJonEkHeSNBto90n9Nwogaq2uMm7FoKUA8chwgo/edit?usp=sharing)
@@ -65,4 +65,4 @@ We welcome contributions to the AgriSales project. Please follow these steps to 
 Our next steps involve integrating the remaining functionalities to make the app fully operational. Stay tuned for updates.
 
 ## Acknowledgments
-
+@aristote12 @ythia16 @cynthianekesa
