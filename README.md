@@ -21,9 +21,9 @@ AgriSales aims to revolutionize the agricultural landscape in Rwanda and Africa 
 - Project Proposal: [[Agrisale project proposal]](https://docs.google.com/document/d/1miVxpPlrHXNANIehPhZvftHHxF1OOzooBq3_m38gU2g/edit?usp=sharing)
 - Figma Design: [[Project User Interface Design]](https://www.figma.com/design/uFf9JQbFSYzUokgaVqPLnS/AgriSales-(Community)-FlutterDevs%F0%9F%98%82Lol?node-id=0-1&t=qENXlbv1eKP7TPV4-1)
 - Front-End Implementation Demo: [[Front-end video]](https://raw.githubusercontent.com/Ynthia16/AgriSales_MobileApp/main/AgrisalesDemo.mp4)
-- Authentication, Business Logic and Backend Demo: [[Back-end video]](https://docs.google.com/document/d/1HoI0YJonEkHeSNBto90n9Nwogaq2uMm7FoKUA8chwgo/edit?usp=sharing)
+- Authentication, Business Logic, and Backend Demo: [[Back-end video]](https://docs.google.com/document/d/1HoI0YJonEkHeSNBto90n9Nwogaq2uMm7FoKUA8chwgo/edit?usp=sharing)
 - Testing and creating APK and Business Model: [[Finalizing summative]]()
-- APK File: [[Finalizing summative]](https://drive.google.com/file/d/1NgSb9HHm0hRRqzmQkz75oFUiHOeXrica/view?usp=drive_web) 
+- APK File: [[Agrisale MobileApp APK]](https://drive.google.com/file/d/1NgSb9HHm0hRRqzmQkz75oFUiHOeXrica/view?usp=drive_web) 
 
 ## Troubleshooting
 If you encounter errors after cloning the repo on your system, try installing the matching dependencies, as we have handled all bugs and done unit testing. If issues persist, create an issue, and we will get back to you soonest.
@@ -65,4 +65,4 @@ We welcome contributions to the AgriSales project. Please follow these steps to 
 Our next steps involve integrating the remaining functionalities to make the app fully operational. Stay tuned for updates.
 
 ## Acknowledgments
-@aristote12 @ythia16 @cynthianekesa
+@aristote12 @ynthia16 @cynthianekesa
