@@ -22,7 +22,7 @@ AgriSales aims to revolutionize the agricultural landscape in Rwanda and Africa 
 - Figma Design: [[Project User Interface Design]](https://www.figma.com/design/uFf9JQbFSYzUokgaVqPLnS/AgriSales-(Community)-FlutterDevs%F0%9F%98%82Lol?node-id=0-1&t=qENXlbv1eKP7TPV4-1)
 - Front-End Implementation Demo: [[Front-end video]](https://raw.githubusercontent.com/Ynthia16/AgriSales_MobileApp/main/AgrisalesDemo.mp4)
 - Authentication, Business Logic, and Backend Demo: [[Back-end video]](https://docs.google.com/document/d/1HoI0YJonEkHeSNBto90n9Nwogaq2uMm7FoKUA8chwgo/edit?usp=sharing)
-- Testing and creating APK and Business Model: [[Finalizing summative]]()
+- Testing and creating APK and Business Model: [[Finalizing summative]](https://docs.google.com/document/d/1iItCUGACDDEfvHnpa3HGU8VxH8i60viFStG-W6Md66Q/edit?usp=sharing)
 - APK File: [[Agrisale MobileApp APK]](https://drive.google.com/file/d/1NgSb9HHm0hRRqzmQkz75oFUiHOeXrica/view?usp=drive_web) 
 
 ## Troubleshooting
